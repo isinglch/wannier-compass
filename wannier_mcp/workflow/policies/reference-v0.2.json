@@ -1,0 +1,135 @@
+{
+  "version": "wannier-reference-0.2",
+  "role": "Advisory evidence and documented basis/window decisions for a first Wannier trial; no claim of a validated model.",
+  "energy_reference": "eV relative to the explicitly sourced Fermi reference",
+  "default_scope": "complete selected manifold; any additional priority region must follow the explicit physical task",
+  "data_flow": {
+    "default_decision_source": "projected_band_path",
+    "completed_mesh_required_before_interface": false,
+    "separate_mesh_or_pdos_for_selection": false,
+    "default_dft_preparation_stages": [
+      "scf",
+      "band"
+    ],
+    "interface": "One fixed-density uniform-grid VASP Wannier interface run from completed SCF density and reviewed projected-band proposal; no prior mesh output or WAVECAR required.",
+    "numerical_gate": "Path counts are provisional. Check the actual interface EIGENVAL/eig and k-point order after matrix generation, before Wannier90 disentanglement."
+  },
+  "wannier_execution": {
+    "mode": "disentanglement_only",
+    "num_iter": 0,
+    "require_explicit_num_iter": true,
+    "dis_num_iter_default": 10000,
+    "dis_num_iter_max": 10000,
+    "dis_conv_tol": 1e-08,
+    "dis_conv_window": 3,
+    "slow_after_iterations": 2000,
+    "dis_num_iter_role": "Independent disentanglement iteration limit, recorded separately from actual iterations and scientific trial count.",
+    "automatic_localization_fallback": false,
+    "override_requires": "An explicit user change of the execution convention, recorded as a separate experiment.",
+    "symmetry_claim": "Skipping maximal localization does not itself certify symmetry."
+  },
+  "grouping": "element x whole s/p/d/f angular shell; site- or component-resolved minimal models require an explicit scope",
+  "raw_drop_below": 0.05,
+  "raw_nominate_at": 0.1,
+  "raw_statistic": "full-spectrum raw peak and per-band means by default; optional explicit diagnostic interval has no default width and cannot decide orbital inclusion",
+  "raw_threshold_role": "optional diagnostic support levels only; full-spectrum evidence has no automatic candidate label or inclusion rule",
+  "raw_self_normalization": false,
+  "potcar_selection_gate": false,
+  "chemical_role": "Main starting candidates: s for s block, p for p block, d for d block and available f for the f series. The f-series hint does not establish occupation or task relevance. Additional channels, including group-13 s and optional Ca/Sr/Ba empty d, need independent task-related projection review. A strong deep bonding block, residual hybridization or absence of a global gap alone does not require inclusion. Declare task scope before basis/target, record both inclusion and omission risks, and test unresolved roles explicitly. No fixed EF interval, automatic full-valence mandate or universal s deletion applies.",
+  "same_state_comparison": {
+    "comparison_basis": "explicitly recorded current basis B, never an implicit historical target; exclude the tested channel alpha from B if present",
+    "candidate_weight": "w_alpha(k,n), the raw element-shell charge projection",
+    "strongest_existing_weight": "M_B(k,n) = max over beta in B of w_beta(k,n)",
+    "existing_total_weight": "W_B(k,n) = sum over beta in B of w_beta(k,n)",
+    "relative_strength": "R_alpha(k,n) = w_alpha(k,n) / M_B(k,n)",
+    "zero_denominator": "report the ratio as null and preserve both raw weights; do not suppress a candidate solely because B is empty or has zero weight",
+    "required_context": "full energy distribution, band-local evidence and any explicitly requested physical region; no default EF box",
+    "competition_hard_cutoff": null,
+    "interpretation": "Raw projection strength provides evidence about local angular character, not proof that an independent Wannier orbital is required or that B spans the target states."
+  },
+  "orbital_review_actions": {
+    "include": "Use the channel in the first trial when evidence supports a necessary or significant target component, especially where existing channels are weak.",
+    "omit_first_trial": "Omit an optional weak/secondary channel only after reviewing its target role. Omitting a chemical starting shell additionally requires its strongest state on the reviewed reference rows, same-state selected weights, physical-role reason and omission risk; subordinate weight alone is insufficient.",
+    "defer": "Inspect branches or obtain missing evidence when comparable channels, role exchange or scope ambiguity prevent a supported decision."
+  },
+  "orbital_review_requirements": [
+    "Every action requires a nonempty reason and resolvable evidence references.",
+    "A candidate maximum exceeding 0.10 is not an automatic inclusion rule.",
+    "A channel that is not the strongest is not automatically omitted.",
+    "The full energy distribution remains available when deciding whether a weak local contribution belongs to a distant main spectral block.",
+    "Changing the comparison basis changes the evidence context and requires a new analysis identity and review.",
+    "Historical basis/window labels are comparison outputs, never selection inputs."
+  ],
+  "coverage_target": 0.7,
+  "coverage_modes": [
+    "per_group",
+    "pooled"
+  ],
+  "coverage_mode_default": null,
+  "coverage_mode_role": "Record the chosen interpretation explicitly; do not silently switch modes between materials to match historical results.",
+  "coverage_numerator": "raw selected projection weight inside the proposed outer window, with the documented sampling weights",
+  "coverage_reference_domain": {
+    "all_computed_diagnostic": "Use all computed states only for a clearly labeled diagnostic; adding empty bands changes this denominator.",
+    "reviewed_target_manifold": "Describe and reference evidence for the reviewed target spectral domain before interpreting its 70% coverage as a window recommendation."
+  },
+  "coverage_role": "Approximately 70% conduction-only coverage plus tail evidence guides the initial upper window. It does not set the lower window, certify completeness, or include valence mass in the upper-window denominator.",
+  "tail_reference": {
+    "bin_eV": 1.0,
+    "to_peak_ratio": 0.5,
+    "consecutive_bins": 2,
+    "role": "diagnostic reference, not an automatic veto; report the profile, peak, ratios and deviations for review",
+    "upper_buffer_from_tail_start_eV": 1.0,
+    "second_upper_increment_eV": 2.0
+  },
+  "lower_window_role": "Make three independent valence decisions. First, identify the complete target projection envelope and put dis_min below its lowest state with starting margin; unwanted states may enter outer for disentanglement. Second, start frozen_min above retained unwanted or weakly projected lower states, leaving mixed target states in outer when no clean scalar boundary exists. Third, optionally exclude a reviewed occupied non-target prefix only if a sampled global gap supports it, then recheck on the actual interface grid. Neither exclusion nor any gap requires shared dis_min and frozen_min; an explicit reviewed override may share them in a clean protective gap.",
+  "initial_frozen": "From EF for metals/semimetals or CBM for reviewed insulators, inspect target low-conduction states in ascending energy as positive frozen candidates. Review selected-versus-unselected raw projections, outside-target states and per-k counts; record why the first target state left outside frozen is deferred. Occupation alone is not a stopping rule. Apply the separately scoped negative screen only after a positive candidate exists.",
+  "frozen_impurity_role": "raw and same-state competing projection evidence, not a universal per-state impurity veto",
+  "frozen_upper_review": {
+    "criterion_id": "frozen_state_counterexample_v1",
+    "absolute_target_floor": 0.1,
+    "review_backoff_eV": 0.25,
+    "max_weak_samples": 12,
+    "role": "Run only after the basis, target, exclusions, outer and an independently reasoned frozen candidate are fixed. Weak target or stronger omitted projection is counterevidence against the adopted frozen interval, even when the other projected channels are weak. A lower-edge counterexample prompts review of raising frozen_min; an upper-edge counterexample may veto a higher candidate or prompt lowering frozen_max. Neither edge changes automatically. A clean screen never supports enlargement. This criterion never adds or deletes orbitals, changes target/exclusions/dis or certifies a fit; raw atomic-sphere projections are not whole-space probabilities."
+  },
+  "required_numerical_checks": [
+    "finite, consistent data and explicit energy reference",
+    "ordered windows with frozen contained in outer",
+    "Provisional Nfrozen <= Nwann <= Nouter and top coverage checks on the projected band path permit interface preparation, not disentanglement",
+    "After the single interface NSCF, check Nfrozen <= Nwann <= Nouter and absence of computed-band top clipping on its actual full grid before Wannier90",
+    "Fresh checks tied to the reviewed analysis, basis revision, trial basis, exact windows and explicit sampling; no completed standalone mesh is required before preparing the interface",
+    "Band-based proposed_trial requires explicit complete_band_ranges_1based; recompute both target envelope boundaries, independently of counts."
+  ],
+  "nbands_policy": "Reserve additional empty bands initially as a separate compute-budget choice. If data show that the required trial is clipped or lacks sufficient bands, retain the basis and redo the necessary non-self-consistent steps with more bands. Failure of a tail heuristic alone does not imply insufficient NBANDS.",
+  "final_acceptance": "Actual Wannier interpolation and the declared target/priority ranges determine fit acceptance; spread and numerical feasibility alone do not validate the model.",
+  "universal_accuracy_claim": false,
+  "selection_revision": "independent-valence-lower-bounds-20260927",
+  "retry_directions": "Move either outer edge according to missed target states and irrelevant background; enlarge, shrink, or move frozen according to clean target protection versus forced unwanted character. Correct a demonstrably wrong basis before window optimization.",
+  "selection_parameters": {
+    "outer_buffer_eV": 0.5,
+    "outer_rounding_eV": 0.25,
+    "frozen_buffer_eV": 0.05,
+    "frozen_rounding_eV": 0.05,
+    "role": "Transparent starting margins for trials, not physical thresholds; target membership is explicitly reviewed from projections."
+  },
+  "valence_selection": {
+    "minimum_gap_eV": 0.1,
+    "occupation_tolerance": 0.001,
+    "role": "Conservative optional exclusion policy only, not a valence-window threshold or mathematical requirement of Wannier90: default global clearance is twice the 0.05 eV frozen margin. Smaller gaps require an explicit policy/review change if exclusion is requested; windows proceed without exclusion. Full occupation and numerical separation do not prove non-target character. Legacy complete_shells checks exact shell capacity; explicit reviewed_spectral_block permits partial spectral blocks without that equality. An unsafe boundary prompts review of shorter prefixes or no exclusion, never automatic deletion or a material-failure verdict."
+  },
+  "conduction_selection": {
+    "energy_floor_relative_ef_eV": 0.0,
+    "role": "70% and tail use only the conduction part of explicitly reviewed reference rows. Selected valence-only groups may be omitted from this diagnostic with a reason; all target rows remain protected."
+  },
+  "inspection_scope": {
+    "default": "all_computed_projected_bands",
+    "energy_interval_eV": null,
+    "role": "Tools expose full distributions and optional caller-selected diagnostic regions. AI reviews chemical valence, complete band blocks, mixing and tails. No fixed EF-centered discovery gate or acceptance interval."
+  },
+  "reviewed_window_override": "AI may record explicit outer/frozen values and a physical reason; preserve heuristic suggestions alongside them and recompute necessary count, nesting, cutoff and target-envelope checks.",
+  "comparison_display": {
+    "frozen_padding_eV": 1.0,
+    "outer_padding_eV": 3.0,
+    "role": "Expand both ends of the actual frozen/outer intervals for visualization only; not energy-error tolerances or acceptance regions.",
+    "without_windows": "all supplied states; no inferred fixed EF interval"
+  }
+}

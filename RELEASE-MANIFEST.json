@@ -1,0 +1,606 @@
+{
+  "format": "wannier-repository-distribution-manifest-v1",
+  "version": "0.1.0",
+  "release_title": "First release",
+  "release_date": "2026-10-14",
+  "status": "research_preview",
+  "english_execution_guidance_remains_canonical": true,
+  "raw_material_data_included": false,
+  "unpublished_structures_included": false,
+  "display_assets_in_operational_package_data": false,
+  "public_benchmark_evidence": "GPT band-fit PDF covering35 named materials; no raw calculation inputs.",
+  "files": [
+    {
+      "path": ".gitignore",
+      "bytes": 810,
+      "sha256": "e80398e34468e6b9bb976c1d1ad7e7d68913edd30a4426c97b7e89d58baee4e7"
+    },
+    {
+      "path": "README.en.md",
+      "bytes": 23947,
+      "sha256": "e6e6aa6872dfc45545a8b0fdefa3cc06d6abbb791c29e91adbcb5c2d25ddc1bb"
+    },
+    {
+      "path": "README.md",
+      "bytes": 23633,
+      "sha256": "36d16e0dc86a74ccd7ba51e5475edd851e4dc8bc5c72e699f40afc182de9fee1"
+    },
+    {
+      "path": "README.zh-CN.md",
+      "bytes": 410,
+      "sha256": "ccef024aa5df84f7bd9ac53750419c7be4a84701a4551c096418b6cc049944c4"
+    },
+    {
+      "path": "ROADMAP.md",
+      "bytes": 2656,
+      "sha256": "a68eed7c18d15ee4207805234124f23a729c80abcc135cb23d417c215d489efe"
+    },
+    {
+      "path": "SKILL.md",
+      "bytes": 3438,
+      "sha256": "6d1630fbcd8e41b6b04079d997d209f109ed44c8a42429218ae0838a8bffb9a0"
+    },
+    {
+      "path": "benchmarks/gpt-band-fits.pdf",
+      "bytes": 16684602,
+      "sha256": "5404a97f12e7f9fdb7e9cd5b87c6f9bc47aa57c4cdb28f463f3200f99fc42240"
+    },
+    {
+      "path": "docs/CU-WORKFLOW-ILLUSTRATION.en.md",
+      "bytes": 2081,
+      "sha256": "5d42d50affb50886cfb832b7d4c37e0b2a694cc3424a62058b95a7d5e72bc153"
+    },
+    {
+      "path": "docs/CU-WORKFLOW-ILLUSTRATION.md",
+      "bytes": 1696,
+      "sha256": "be5ab927defac2dfdb37cb7ebb66d0f81f962c0614a7084129cd223413ac01b7"
+    },
+    {
+      "path": "docs/assets/cu-ai-workflow.en.png",
+      "bytes": 875191,
+      "sha256": "c3527a0d944bf7aefb595a3b49f4154b85f483153f5e9c1941d359dd0267e11c"
+    },
+    {
+      "path": "docs/assets/cu-ai-workflow.zh-CN.png",
+      "bytes": 882656,
+      "sha256": "152d545a2e8a506ebe3ccae6fe02a15ad39b652efdc1fb5335c51eca23809188"
+    },
+    {
+      "path": "docs/assets/cu-window-zoom.png",
+      "bytes": 819589,
+      "sha256": "7bc02dcc59e65893738256b9963c93316689b1978c6491501816cfa8dcb6e55c"
+    },
+    {
+      "path": "docs/assets/gpt-selected-six-dis.pdf",
+      "bytes": 3238118,
+      "sha256": "d3fee0dbd5721f2784bff8afc0aa14769be81c6e26b4c56c3a4f5a6ebc14d6c6"
+    },
+    {
+      "path": "docs/assets/gpt-selected-six-dis.png",
+      "bytes": 1826342,
+      "sha256": "c86d5a96ab4af4eece111e0fdf1f41773d7295a936f45f186b4aa59e21c593c1"
+    },
+    {
+      "path": "docs/assets/wannier-running.en.png",
+      "bytes": 2065297,
+      "sha256": "c2f569dc1568180a2ba8390bd3adf2ba510b1d364f7d3377ec22f09413eb6f53"
+    },
+    {
+      "path": "docs/assets/wannier-running.zh-CN.png",
+      "bytes": 2044736,
+      "sha256": "90191bcee08ce59896d9d19d0b95b36141011a8df08775a3d7b10ba6500ad851"
+    },
+    {
+      "path": "examples/make_synthetic_case.py",
+      "bytes": 2527,
+      "sha256": "baaa81ea876f7fce150a214e65d396bd3d8d0228c3cada04920adb70ae5bfa69"
+    },
+    {
+      "path": "pyproject.toml",
+      "bytes": 830,
+      "sha256": "aa066b70843917ec02c74a0f9c8143fd8644b231dc219f2e29401c39b9c07e5f"
+    },
+    {
+      "path": "tests/test_basis_scope.py",
+      "bytes": 27077,
+      "sha256": "6d084d286718d55d9366124f98d0eeca8da72651125e70f0c7d8b36c760ad9ab"
+    },
+    {
+      "path": "tests/test_f_channels.py",
+      "bytes": 19307,
+      "sha256": "f9c2d7b36b44c235eceb77aebdf537deaeaf4375cb0711764ff503d9a5d8ebc9"
+    },
+    {
+      "path": "tests/test_interface_numeric_rows.py",
+      "bytes": 5028,
+      "sha256": "4d25b5177cfac16197f6c2f1824914b9ff4052054b22ad41f00e8fee5d19d3d8"
+    },
+    {
+      "path": "tests/test_interface_receipt_copy.py",
+      "bytes": 2306,
+      "sha256": "ecc0a01ab02d11d820db041790d1177aafe5d0ccf6973d90834f64a1f6fc8332"
+    },
+    {
+      "path": "tests/test_mcp_adapter.py",
+      "bytes": 4841,
+      "sha256": "c608f85fa2fbdb6cdd30bd388a5d43cf5b3853bd87ac5a7171d68afbd166f076"
+    },
+    {
+      "path": "tests/test_runtime.py",
+      "bytes": 17426,
+      "sha256": "979e602c4762c8a755ba2cf340f3cfe50522dbfae17d5a2ac83cbdacc6516c17"
+    },
+    {
+      "path": "tests/test_selection_scope_audit.py",
+      "bytes": 9508,
+      "sha256": "884cfa1b42ca367cdb253f1c2a5fc5dad4a3b8dac45bf686e532766b259903e3"
+    },
+    {
+      "path": "tests/test_single_ion_procar.py",
+      "bytes": 2600,
+      "sha256": "3f15b51c9d083fa8a6a4ae003bb887bc6f18e645acc868beb76605d2aa02b659"
+    },
+    {
+      "path": "tests/test_slurm_source_paths.py",
+      "bytes": 6592,
+      "sha256": "2969cbea0a84c95f4b8c0903a3e1bd4d2a5188e35d4a6a850ae8273489252c16"
+    },
+    {
+      "path": "wannier_mcp/__init__.py",
+      "bytes": 90,
+      "sha256": "e9070f54f27b4df6fd5b1e9e88287e67b701825dd9362c97ea8d34a4906933fa"
+    },
+    {
+      "path": "wannier_mcp/server.py",
+      "bytes": 28021,
+      "sha256": "a90358142f50780d96f6e0e93db8a00094e9adfc25fb63145599654b81f8b18b"
+    },
+    {
+      "path": "wannier_mcp/workflow/SKILL.md",
+      "bytes": 7873,
+      "sha256": "f02721cbd7f727136198925e5a471fb8c73955defafc87bc4a5baf3b0dc24f9e"
+    },
+    {
+      "path": "wannier_mcp/workflow/docs/CONSTRUCTION-OVERVIEW.md",
+      "bytes": 9976,
+      "sha256": "de69d33d805d3fc33e729cfd92941405744c893f8d6be4186081ebcf29bc3798"
+    },
+    {
+      "path": "wannier_mcp/workflow/docs/DECISION-STAGES.md",
+      "bytes": 10884,
+      "sha256": "d012898a76280b435251d78a7facfaca58afaec656c4369e81b6e4d6195ee23e"
+    },
+    {
+      "path": "wannier_mcp/workflow/docs/DFT-PLOTS.md",
+      "bytes": 2343,
+      "sha256": "3e8141e70777d978c85d3a1e0500c434305b9a372bdede6dd3fb7ebb67e73c90"
+    },
+    {
+      "path": "wannier_mcp/workflow/docs/DFT-PREPARATION.md",
+      "bytes": 9571,
+      "sha256": "4514b9e45ee51d513bfd89137c915407de0f89a5109e22348203c552b8580049"
+    },
+    {
+      "path": "wannier_mcp/workflow/docs/DOCUMENTATION.md",
+      "bytes": 4558,
+      "sha256": "5b3762f11f3970b00b5faaa2ddaf4557a9df684378cb1b8662a471d4a629aee7"
+    },
+    {
+      "path": "wannier_mcp/workflow/docs/EVALUATION-AND-KNOWLEDGE.md",
+      "bytes": 6921,
+      "sha256": "758ca7c18f0ef7f2c61990bbde11f501d62c1221481c99ec39dd8abf84497506"
+    },
+    {
+      "path": "wannier_mcp/workflow/docs/FIRST-TRIAL-CARD.md",
+      "bytes": 6464,
+      "sha256": "99496aca552a78a0ae79133637eee8dbf011ef0c831c57efecfb59d00fd5ec65"
+    },
+    {
+      "path": "wannier_mcp/workflow/docs/FIT-PLOTTING.md",
+      "bytes": 4817,
+      "sha256": "3914f72aa3cb193df3433a0cbb459100ea1237fba481ea1ffa017ba4288e558f"
+    },
+    {
+      "path": "wannier_mcp/workflow/docs/INDEPENDENT-REVIEW.md",
+      "bytes": 6745,
+      "sha256": "8b38441bdaa061a744479aae7e4b0cec5498fd9591c1a48002f7d499a99972db"
+    },
+    {
+      "path": "wannier_mcp/workflow/docs/INTERFACES.md",
+      "bytes": 6568,
+      "sha256": "055d59e90982e362789a04135e3167a229bc8caa0d5c2882a2c122e05123832b"
+    },
+    {
+      "path": "wannier_mcp/workflow/docs/MANIFOLD-SELECTION.md",
+      "bytes": 24158,
+      "sha256": "6fe609ac1b3e0d1fd794c17acc5e0a7f0430bce62ef18281abbd74ea6a71c47d"
+    },
+    {
+      "path": "wannier_mcp/workflow/docs/MATERIAL-LAYOUT.md",
+      "bytes": 4152,
+      "sha256": "410a87f7b05c10d3f54c9f453ca84d6d36aa93c28d12edfe3cb1976626a66f89"
+    },
+    {
+      "path": "wannier_mcp/workflow/docs/PHYSICAL-REASONING.md",
+      "bytes": 6772,
+      "sha256": "929ea2dfb1e749e9a5d6c317b2e50056e969ba7417a88ebb622f6297384ace55"
+    },
+    {
+      "path": "wannier_mcp/workflow/docs/PLOTTING.md",
+      "bytes": 5200,
+      "sha256": "5eac310792084e81e301513aa3c6f79cbf78914036df0ee12dab73e9d59dd5cb"
+    },
+    {
+      "path": "wannier_mcp/workflow/docs/REFERENCE-TOOLS.md",
+      "bytes": 8334,
+      "sha256": "fb41dc0c7a0276fafa68b42570702b38f7faf1babfdce6a44984f0a74febed61"
+    },
+    {
+      "path": "wannier_mcp/workflow/docs/REFERENCE-WORKFLOW-V0.2.md",
+      "bytes": 1893,
+      "sha256": "92f6b8bc5ce5e0ba18281b22c3c666886708e2ccb45fa177f252758fa50cad27"
+    },
+    {
+      "path": "wannier_mcp/workflow/docs/RUNTIME.md",
+      "bytes": 6710,
+      "sha256": "4da88b1f0d1ed9270975880512948b187deaa8b1d3bc5067f9d60f6110b8ba28"
+    },
+    {
+      "path": "wannier_mcp/workflow/docs/SELECTION-GALLERY.md",
+      "bytes": 2230,
+      "sha256": "10840999129ff9a42808df53e54961269497e129916c7d215ebb01f4e463fc72"
+    },
+    {
+      "path": "wannier_mcp/workflow/docs/SLURM-EXAMPLE.md",
+      "bytes": 4172,
+      "sha256": "64c0bda35c9a36da55125c68763b27d19b67b7bfc2f6832602875d37196cbbe6"
+    },
+    {
+      "path": "wannier_mcp/workflow/docs/USER-EXPERIENCE-LIBRARY.md",
+      "bytes": 1044,
+      "sha256": "c7a2b5c6c5998ebe07eebd69633c0669e11ced0b756c377eb1b04fb73289b6a1"
+    },
+    {
+      "path": "wannier_mcp/workflow/docs/VASP-CACHE.md",
+      "bytes": 6004,
+      "sha256": "f7d0312b6bd95e4b5be85740de9305d4a6020ce737c02ab61e6cc528ac9fa5e0"
+    },
+    {
+      "path": "wannier_mcp/workflow/docs/WANNIER-COMPARISON.md",
+      "bytes": 3289,
+      "sha256": "03e1b18ff4391fe8722cd3e481628c788f00556fda601d5fa3ccb084f72a36a7"
+    },
+    {
+      "path": "wannier_mcp/workflow/docs/WANNIER-EXECUTION.md",
+      "bytes": 10549,
+      "sha256": "5fc2992684f9f262bd18610b8f496f115e7229b1f466eaa68f6d1d3619db1594"
+    },
+    {
+      "path": "wannier_mcp/workflow/docs/WANNIER-INTERFACE.md",
+      "bytes": 14136,
+      "sha256": "3df21596a799b227327b05d6c2363fa2dcf24cda6fb1138fd4086003e800f00b"
+    },
+    {
+      "path": "wannier_mcp/workflow/docs/WINDOW-RETRIES.md",
+      "bytes": 6497,
+      "sha256": "c8cb32d25283894667ddbb9c2a9fa901cfff2dd5cb5af259d29a4c2d0535a62f"
+    },
+    {
+      "path": "wannier_mcp/workflow/docs/WORKFLOW-DECISIONS.md",
+      "bytes": 13660,
+      "sha256": "9408e16cd222d2434228650ecbe454b2ec2a0b1f9b22f1b346fe080b72cbad8c"
+    },
+    {
+      "path": "wannier_mcp/workflow/docs/zh-CN/CONSTRUCTION-OVERVIEW.md",
+      "bytes": 11644,
+      "sha256": "1c76fcb08e2292bca64c843f84f2586bcd7d1edb6a69e02b906a2b5d6fe1196b"
+    },
+    {
+      "path": "wannier_mcp/workflow/docs/zh-CN/DECISION-STAGES.md",
+      "bytes": 11178,
+      "sha256": "cc251b370831aa132a638b19f9f10bb20e563fbfe394a801c2e042a8e73ecfa8"
+    },
+    {
+      "path": "wannier_mcp/workflow/docs/zh-CN/DFT-PLOTS.md",
+      "bytes": 3184,
+      "sha256": "7b8903c0c9d5b0add58985cea755b3b4e1549f59cb2d0c6686ecb9430c76dd18"
+    },
+    {
+      "path": "wannier_mcp/workflow/docs/zh-CN/DFT-PREPARATION.md",
+      "bytes": 12106,
+      "sha256": "c4111dbddb01c7ce2e494e9b3440ae2c7ec2a53ba625506e1e0568423db520de"
+    },
+    {
+      "path": "wannier_mcp/workflow/docs/zh-CN/DOCUMENTATION.md",
+      "bytes": 2872,
+      "sha256": "0541ac20c117956c1b88a168915880621e61d5af6ea2b5c80c1d46c34c152783"
+    },
+    {
+      "path": "wannier_mcp/workflow/docs/zh-CN/EVALUATION-AND-KNOWLEDGE.md",
+      "bytes": 7058,
+      "sha256": "93600fc4ec953f618a248ccd4c780ee79acb88930b824d53a3649fc476f7c753"
+    },
+    {
+      "path": "wannier_mcp/workflow/docs/zh-CN/FIRST-TRIAL-CARD.md",
+      "bytes": 4149,
+      "sha256": "58152b4ee43344b788552a1240f610421b4fe6da1c47d0aa40b2294630105188"
+    },
+    {
+      "path": "wannier_mcp/workflow/docs/zh-CN/FIT-PLOTTING.md",
+      "bytes": 6717,
+      "sha256": "44b64913468e03ad66b262d1b520606295007bfb9f2f7a0f7fd4e74c91a0467b"
+    },
+    {
+      "path": "wannier_mcp/workflow/docs/zh-CN/INDEPENDENT-REVIEW.md",
+      "bytes": 7552,
+      "sha256": "2a5737666afd1b6d746ee76c61684925c1e0da125f5455b06823bc3cc2afd1be"
+    },
+    {
+      "path": "wannier_mcp/workflow/docs/zh-CN/INTERFACES.md",
+      "bytes": 4207,
+      "sha256": "2093a2780c5f48ea35e41f08ce3484f4563b96fbb69ee49dc8d685d61435c5f5"
+    },
+    {
+      "path": "wannier_mcp/workflow/docs/zh-CN/MANIFOLD-SELECTION.md",
+      "bytes": 27302,
+      "sha256": "39ec8669031bc2d725d0e09624a81103b24535107abb7b2951b3b8bd498cc023"
+    },
+    {
+      "path": "wannier_mcp/workflow/docs/zh-CN/MATERIAL-LAYOUT.md",
+      "bytes": 5466,
+      "sha256": "5dc71bde2d2e6f45853899300b7dda6b3948b9248faa3ec2bbf9d0c08348cf66"
+    },
+    {
+      "path": "wannier_mcp/workflow/docs/zh-CN/PHYSICAL-REASONING.md",
+      "bytes": 5455,
+      "sha256": "ab6a99fab0cbd5c3e3e0d5067b3001ac36041b789d4bbe1584d62430f1479b23"
+    },
+    {
+      "path": "wannier_mcp/workflow/docs/zh-CN/PLOTTING.md",
+      "bytes": 7097,
+      "sha256": "9404a66296fcd1f8ff89578faa7133a4607ec7add3d4079fedbe2cca2d88fb54"
+    },
+    {
+      "path": "wannier_mcp/workflow/docs/zh-CN/README.md",
+      "bytes": 1368,
+      "sha256": "61dccfe72731c8369425fc85bed0a4b4c9b52d1608b6bf496cd94c07043c44b1"
+    },
+    {
+      "path": "wannier_mcp/workflow/docs/zh-CN/REFERENCE-TOOLS.md",
+      "bytes": 11984,
+      "sha256": "940fc6479a1d5e363f4254a3f2b0834e044a14c63118d9ca59fa0ec7092b14fe"
+    },
+    {
+      "path": "wannier_mcp/workflow/docs/zh-CN/REFERENCE-WORKFLOW-V0.2.md",
+      "bytes": 2691,
+      "sha256": "66ad67d038c413b0545bc9cdfc07b72a7d5f8a6f0c5f334e8aaa61cc08c5fac9"
+    },
+    {
+      "path": "wannier_mcp/workflow/docs/zh-CN/RUNTIME.md",
+      "bytes": 5324,
+      "sha256": "93bc869f324dac122faccb96937655bac70615ad82d7b8b4abffeec5347de0da"
+    },
+    {
+      "path": "wannier_mcp/workflow/docs/zh-CN/SELECTION-GALLERY.md",
+      "bytes": 3054,
+      "sha256": "1bd0a493fe1583a76c737ceeecef6fb0507a5c5d9efc2b9a81673f706397aaa4"
+    },
+    {
+      "path": "wannier_mcp/workflow/docs/zh-CN/SLURM-EXAMPLE.md",
+      "bytes": 2590,
+      "sha256": "6528e953568242c9685fb70fd6619cef700ec28844c99fea2db6372fc51d5cac"
+    },
+    {
+      "path": "wannier_mcp/workflow/docs/zh-CN/USER-EXPERIENCE-LIBRARY.md",
+      "bytes": 929,
+      "sha256": "6991a82f9ddae355ddf8926fe1561cfe677ce48c37688fa17a03d11272b3c052"
+    },
+    {
+      "path": "wannier_mcp/workflow/docs/zh-CN/VASP-CACHE.md",
+      "bytes": 7073,
+      "sha256": "fead839acd5db50e1e81c5bf9c3e751396a0f75c83fc7084464d169015289089"
+    },
+    {
+      "path": "wannier_mcp/workflow/docs/zh-CN/WANNIER-COMPARISON.md",
+      "bytes": 3974,
+      "sha256": "a7318709aeca84567fb5e032c051d5bada8bf669c5f77ac7bb6cddbb724bb80a"
+    },
+    {
+      "path": "wannier_mcp/workflow/docs/zh-CN/WANNIER-EXECUTION.md",
+      "bytes": 12740,
+      "sha256": "c3fa67a2965f2a718f845c01b555b741b2e5c61d78ba03bae58f2fcc8b7f4396"
+    },
+    {
+      "path": "wannier_mcp/workflow/docs/zh-CN/WANNIER-INTERFACE.md",
+      "bytes": 17215,
+      "sha256": "6feca0ea2e63f25f97f5006f47a2d565b0e620258d63cc7215acba9618f81dc5"
+    },
+    {
+      "path": "wannier_mcp/workflow/docs/zh-CN/WINDOW-RETRIES.md",
+      "bytes": 5007,
+      "sha256": "c7ca844a735222118b80277e7e88703c7b1710d98f24d2ec7d8c5ad3bcb9c3fa"
+    },
+    {
+      "path": "wannier_mcp/workflow/docs/zh-CN/WORKFLOW-DECISIONS.md",
+      "bytes": 11637,
+      "sha256": "0b5999d2c7024472c94af1acbd6f155eaaddb3381c867ab1e5e5aba996d8c9a5"
+    },
+    {
+      "path": "wannier_mcp/workflow/policies/decision-v0.2.schema.json",
+      "bytes": 16226,
+      "sha256": "c540a4e9713eb7833e102ffa72baaa9b24c9cf50af765182013333d78e5dfa6c"
+    },
+    {
+      "path": "wannier_mcp/workflow/policies/reference-v0.2.json",
+      "bytes": 12394,
+      "sha256": "08de7f9ddebbee721b4001259ea830b341b12e033e964c348711e41275ba9443"
+    },
+    {
+      "path": "wannier_mcp/workflow/requirements-review.txt",
+      "bytes": 57,
+      "sha256": "0d9eed0261b34d0be2bcdcbc0c502286742be6b03f96f8bf10edfc6a5d80df9d"
+    },
+    {
+      "path": "wannier_mcp/workflow/sites/slurm-output-recovery.example.json",
+      "bytes": 479,
+      "sha256": "19774e4de1eb4e9edf670dbb3004a5912ec885e425343bdcddd2be96cad13899"
+    },
+    {
+      "path": "wannier_mcp/workflow/sites/slurm-shared-wavecar.example.json",
+      "bytes": 512,
+      "sha256": "b6ff60b55da5010485a5712327f02f6884b2ab3b558aed79e72d017ac4093663"
+    },
+    {
+      "path": "wannier_mcp/workflow/sites/slurm.example.json",
+      "bytes": 463,
+      "sha256": "96b884539b6be966543cc98d7a55d64c1cec8f9cfab0bf38f76e2d45f04569cc"
+    },
+    {
+      "path": "wannier_mcp/workflow/tools/basis_scope.py",
+      "bytes": 10436,
+      "sha256": "30c9280ac808db6da40e46d9cf789fe6970cd3477a6ecc401d2fa63b877905d8"
+    },
+    {
+      "path": "wannier_mcp/workflow/tools/compare_wannier.py",
+      "bytes": 26390,
+      "sha256": "e7ab572e8bf11f1f2ba43745170ebf9f0bf387b4a92809f012cb44de43231308"
+    },
+    {
+      "path": "wannier_mcp/workflow/tools/conduction_review.py",
+      "bytes": 18060,
+      "sha256": "d1a5f0237d5c1ead7ec4ed3c4826c87025513fa7163a2e83ed38d4d7ef314737"
+    },
+    {
+      "path": "wannier_mcp/workflow/tools/decision_stages.py",
+      "bytes": 29284,
+      "sha256": "f57eb73c2997749713e608b62707376e2d3e7e3b04b750927dcec9d12d6428b4"
+    },
+    {
+      "path": "wannier_mcp/workflow/tools/dft_workflow.py",
+      "bytes": 53327,
+      "sha256": "42b944df95d9d090974967b6d4bbfdd873de522192be2c8fb0c32bcab0bce403"
+    },
+    {
+      "path": "wannier_mcp/workflow/tools/evidence_pipeline.py",
+      "bytes": 2618,
+      "sha256": "bcd91a886e08ac0cb6b013a97665b7a38afcd9d42a2eb7cad6355b8572fa753d"
+    },
+    {
+      "path": "wannier_mcp/workflow/tools/geninterp_path.py",
+      "bytes": 15317,
+      "sha256": "84c7b4b231fba3dbf8770768edac16f650f4844c52d7ee43ed991334b2d4277d"
+    },
+    {
+      "path": "wannier_mcp/workflow/tools/manifold_selection.py",
+      "bytes": 62391,
+      "sha256": "f7fa3a657d3f83a3c8b982a7ad07ede43344b029d05785f6312941d266598060"
+    },
+    {
+      "path": "wannier_mcp/workflow/tools/material_layout.py",
+      "bytes": 18360,
+      "sha256": "700d3c5ab0a83738858fb95d860021b786c5ddbadd13634441cc2f02776fa4b5"
+    },
+    {
+      "path": "wannier_mcp/workflow/tools/orbital_channels.py",
+      "bytes": 2355,
+      "sha256": "35ffc4b813bfc6039154385106bf8d513574cfae15f2bcee54fa5d82fa8625d8"
+    },
+    {
+      "path": "wannier_mcp/workflow/tools/orbital_evidence.py",
+      "bytes": 24210,
+      "sha256": "4fb54bec45b337671ad0666760d813a2b662fb691683b83a3667e4c7941bba5c"
+    },
+    {
+      "path": "wannier_mcp/workflow/tools/plot_dft_bands.py",
+      "bytes": 14823,
+      "sha256": "07e20d06a715067bce2d8c8b22236a6ecb4383e8c526a97044ca65171caea4ee"
+    },
+    {
+      "path": "wannier_mcp/workflow/tools/plot_fit_review.py",
+      "bytes": 16334,
+      "sha256": "7118a2bc2bd5f088212668be88fed3b8dba05f25b3f381c22807418549538e11"
+    },
+    {
+      "path": "wannier_mcp/workflow/tools/plot_review.py",
+      "bytes": 18985,
+      "sha256": "a201e83a916e7bcce4e65abf966a3908c285d625dbada878f0d452e568f88593"
+    },
+    {
+      "path": "wannier_mcp/workflow/tools/prepare_wannier_interface.py",
+      "bytes": 65060,
+      "sha256": "70de9bde92f5a5cec7c0ae4cca8967708fc2b06178c75afb25fb98d81d2fffaf"
+    },
+    {
+      "path": "wannier_mcp/workflow/tools/remote_command.py",
+      "bytes": 4501,
+      "sha256": "67676f65531f555794b532ce8bae5251961e09753cae137c99bacb12ce87865a"
+    },
+    {
+      "path": "wannier_mcp/workflow/tools/review_diagnostics.py",
+      "bytes": 20631,
+      "sha256": "38a31d240a9f522182721556de2d0fc0a31c3c2c9c8ff19e000e1119bc77e403"
+    },
+    {
+      "path": "wannier_mcp/workflow/tools/review_packet.py",
+      "bytes": 8761,
+      "sha256": "6aa1be133d7e96875258b2546018456da91e2584bf34c51c2a2b4744eb15b286"
+    },
+    {
+      "path": "wannier_mcp/workflow/tools/review_workflow.py",
+      "bytes": 14457,
+      "sha256": "b7bc93bf6fa3821e82e4253a229ddfc00d72d4bcea9194e767c70cdbd643dbd1"
+    },
+    {
+      "path": "wannier_mcp/workflow/tools/selection_gallery.py",
+      "bytes": 14076,
+      "sha256": "d53ed537df2ae90594351687b7706dd4374dcafee33673a6164731156db733c5"
+    },
+    {
+      "path": "wannier_mcp/workflow/tools/selection_scope_audit.py",
+      "bytes": 9518,
+      "sha256": "206adde57634bb94f2a49dbd16842be760999b6000ed18d04834d676da4a8fa2"
+    },
+    {
+      "path": "wannier_mcp/workflow/tools/shared_nscf.py",
+      "bytes": 13512,
+      "sha256": "f47f2419006fa28f2df83404b55e9d261a4a99152558cdfca4eb2a57cf502347"
+    },
+    {
+      "path": "wannier_mcp/workflow/tools/slurm_runner.py",
+      "bytes": 26972,
+      "sha256": "de1560b8d3f3bfc4283cdc589a3e896f1210505d6832214d77dfd6840413eecb"
+    },
+    {
+      "path": "wannier_mcp/workflow/tools/usage_accounting.py",
+      "bytes": 7618,
+      "sha256": "72d5c62e42417a96d4075b6ca06425ad466b73a1de83c42caefb6c3671e1fa0a"
+    },
+    {
+      "path": "wannier_mcp/workflow/tools/valence_selection.py",
+      "bytes": 7917,
+      "sha256": "57bde6dbf82c041a43d04644b677c463ee5f2509d497fce52d2c58851eeb528e"
+    },
+    {
+      "path": "wannier_mcp/workflow/tools/vasp_to_cache.py",
+      "bytes": 23351,
+      "sha256": "b7d2844704db791a7eb8d6c4253bce8e4644c9482b84b3b08330ab44e3406ec2"
+    },
+    {
+      "path": "wannier_mcp/workflow/tools/wannier_workflow.py",
+      "bytes": 62023,
+      "sha256": "73d6d3ec28911a5563490014eb4d024720c43f41eb6ee898640e8ea3abf0e377"
+    },
+    {
+      "path": "wannier_mcp/workflow/tools/workflow_cli.py",
+      "bytes": 1182,
+      "sha256": "28ca62f3ebb70062ad1341cf12edbc454ed74dc0b1a7ef96dab8a2e3888d3402"
+    },
+    {
+      "path": "wannier_mcp/workflow/tools/workflow_runtime.py",
+      "bytes": 15896,
+      "sha256": "806bcd5112130f57ed758874c38216b4368b8a5d94b1b7f308905a3a32438a05"
+    }
+  ],
+  "previous_repository_release_id": "419d6eca8cb28b89ca88a092fe3ae56d94692924f6f979c087e67cff8845f506",
+  "release_id": "e1e7ac6bbc824a3bb5c02ec489607b0e6f34f15014bf57e961224e0cb38a5339"
+}

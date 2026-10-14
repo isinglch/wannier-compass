@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=70", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "wannier-compass"
+version = "0.1.0"
+description = "Evidence-guided Wannier manifold and window decisions for AI agents"
+readme = "README.en.md"
+requires-python = ">=3.10"
+dependencies = [
+  "mcp>=2,<3",
+  "numpy>=1.24",
+  "matplotlib>=3.7",
+  "jsonschema>=4.17",
+  "scipy>=1.10",
+]
+
+[project.scripts]
+wannier-compass = "wannier_mcp.server:main"
+wannier-compass-run = "wannier_mcp.server:cli_main"
+
+[tool.setuptools]
+packages = ["wannier_mcp"]
+include-package-data = true
+
+[tool.setuptools.package-data]
+wannier_mcp = [
+  "workflow/SKILL.md",
+  "workflow/requirements-review.txt",
+  "workflow/docs/*.md",
+  "workflow/docs/zh-CN/*.md",
+  "workflow/tools/*.py",
+  "workflow/policies/*.json",
+  "workflow/sites/*.json",
+]

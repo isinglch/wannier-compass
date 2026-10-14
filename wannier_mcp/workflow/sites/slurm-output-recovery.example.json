@@ -1,0 +1,17 @@
+{
+  "name": "example-slurm-output-recovery",
+  "scheduler": "slurm",
+  "nodes": 1,
+  "ntasks": 8,
+  "partition": "YOUR_PARTITION",
+  "time": "08:00:00",
+  "python": "/absolute/path/to/python3",
+  "environment_script": "/absolute/path/to/site_env.sh",
+  "environment_args": [],
+  "launcher": ["srun", "-n", "{ntasks}"],
+  "executables": {
+    "scalar": "/absolute/path/to/vasp_std",
+    "spinor": "/absolute/path/to/vasp_ncl"
+  },
+  "wannier90": "/absolute/path/to/wannier90.x"
+}

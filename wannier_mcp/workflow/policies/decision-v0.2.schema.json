@@ -1,0 +1,587 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Wannier reference decision record v0.2",
+  "description": "Syntax and state-transition constraints for an advisory orbital/window decision. This schema does not establish physical completeness or model accuracy. All energy pairs are in eV relative to the declared source Fermi reference. Runtime validation must check ordered/nested windows, source and analysis identity, basis consistency, evidence references, and freshly recomputed numerical gates.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "policy_version",
+    "scope",
+    "evidence",
+    "orbital_decisions",
+    "trial_basis",
+    "status",
+    "windows",
+    "numerical_checks",
+    "next_action"
+  ],
+  "properties": {
+    "task_scope_review": {"$ref": "#/$defs/task_scope_review"},
+    "additional_basis_evidence": {
+      "type": "object",
+      "propertyNames": {"$ref": "#/$defs/group"},
+      "additionalProperties": {"$ref": "#/$defs/additional_basis_evidence"},
+      "description": "Required for current proposals at runtime; exactly included channels beyond the main block shell. Raw witnesses provide traceability, not sufficient selection evidence."
+    },
+    "trial_intent": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["mode", "reason"],
+      "properties": {
+        "mode": {"const": "exploratory"},
+        "reason": {"$ref": "#/$defs/nonempty_text"}
+      }
+    },
+    "policy_version": {
+      "const": "wannier-reference-0.2"
+    },
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "model_kind",
+        "priority_window_eV",
+        "description"
+      ],
+      "properties": {
+        "model_kind": {
+          "enum": [
+            "selected_manifold",
+            "valence_only",
+            "minimal_model"
+          ]
+        },
+        "priority_window_eV": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "#/$defs/energy_pair"
+            }
+          ],
+          "description": "Optional explicitly declared task priority only. Null by default; no fixed EF interval."
+        },
+        "description": {
+          "$ref": "#/$defs/nonempty_text"
+        }
+      }
+    },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "analysis_id",
+        "source_sha256",
+        "comparison_basis",
+        "basis_revision"
+      ],
+      "properties": {
+        "analysis_id": {
+          "$ref": "#/$defs/sha256"
+        },
+        "source_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "comparison_basis": {
+          "$ref": "#/$defs/basis"
+        },
+        "basis_revision": {
+          "$ref": "#/$defs/nonempty_text"
+        }
+      }
+    },
+    "orbital_decisions": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "group",
+          "action",
+          "reason",
+          "evidence_refs"
+        ],
+        "properties": {
+          "group": {
+            "$ref": "#/$defs/group"
+          },
+          "action": {
+            "enum": [
+              "include",
+              "omit_first_trial",
+              "defer"
+            ]
+          },
+          "reason": {
+            "$ref": "#/$defs/nonempty_text"
+          },
+          "task_role": {"enum": ["task_component", "exploratory_task_component", "secondary_hybridization", "deep_only", "no_task_role"]},
+          "risk_if_included": {"$ref": "#/$defs/nonempty_text"},
+          "risk_if_omitted": {"$ref": "#/$defs/nonempty_text"},
+          "evidence_refs": {
+            "$ref": "#/$defs/evidence_refs"
+          }
+        }
+      }
+    },
+    "trial_basis": {
+      "$ref": "#/$defs/basis"
+    },
+    "status": {
+      "enum": [
+        "needs_basis_review",
+        "basis_trial_candidate",
+        "needs_window_review",
+        "needs_more_data",
+        "proposed_trial"
+      ]
+    },
+    "windows": {
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "dis_eV",
+            "frozen_eV",
+            "coverage_mode",
+            "reference_domain",
+            "review_reason"
+          ],
+          "properties": {
+            "dis_eV": {
+              "$ref": "#/$defs/energy_pair"
+            },
+            "frozen_eV": {
+              "$ref": "#/$defs/energy_pair"
+            },
+            "coverage_mode": {
+              "enum": [
+                "per_group",
+                "pooled"
+              ]
+            },
+            "reference_domain": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "kind",
+                "description",
+                "evidence_refs"
+              ],
+              "properties": {
+                "kind": {
+                  "enum": [
+                    "all_computed_diagnostic",
+                    "reviewed_target_manifold"
+                  ]
+                },
+                "description": {
+                  "$ref": "#/$defs/nonempty_text"
+                },
+                "evidence_refs": {
+                  "$ref": "#/$defs/evidence_refs"
+                },
+                "complete_band_ranges_1based": {
+                  "type": "array",
+                  "minItems": 1,
+                  "items": {
+                    "type": "array",
+                    "minItems": 2,
+                    "maxItems": 2,
+                    "items": {
+                      "type": "integer",
+                      "minimum": 1
+                    }
+                  }
+                }
+              }
+            },
+            "review_reason": {
+              "$ref": "#/$defs/nonempty_text"
+            }
+          }
+        }
+      ]
+    },
+    "numerical_checks": {
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "analysis_id",
+            "basis_revision",
+            "trial_basis",
+            "dis_eV",
+            "frozen_eV",
+            "gate_pass",
+            "scope",
+            "details"
+          ],
+          "properties": {
+            "analysis_id": {
+              "$ref": "#/$defs/sha256"
+            },
+            "basis_revision": {
+              "$ref": "#/$defs/nonempty_text"
+            },
+            "trial_basis": {
+              "$ref": "#/$defs/basis"
+            },
+            "dis_eV": {
+              "$ref": "#/$defs/energy_pair"
+            },
+            "frozen_eV": {
+              "$ref": "#/$defs/energy_pair"
+            },
+            "gate_pass": {
+              "type": "boolean"
+            },
+            "sampling": {
+              "enum": [
+                "band_path",
+                "wannier_mesh"
+              ]
+            },
+            "mesh_gate_pending": {
+              "type": "boolean"
+            },
+            "scope": {
+              "$ref": "#/$defs/nonempty_text"
+            },
+            "details": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "$ref": "#/$defs/nonempty_text"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "next_action": {
+      "enum": [
+        "review_basis",
+        "review_branches",
+        "review_windows",
+        "prepare_interface",
+        "collect_wannier_mesh_data",
+        "add_bands_nscf",
+        "trial_wannier"
+      ]
+    },
+    "band_selection": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "format",
+        "original_nbands",
+        "exclude_bands_1based",
+        "retained_original_bands_1based",
+        "num_bands_retained",
+        "reviewed_blocks",
+        "minimum_gap_eV",
+        "occupation_tolerance"
+      ],
+      "properties": {
+        "format": {
+          "const": "occupied-prefix-selection-v1"
+        },
+        "original_nbands": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "exclude_bands_1based": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "uniqueItems": true
+        },
+        "retained_original_bands_1based": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "num_bands_retained": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "reviewed_blocks": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "band_range_1based",
+              "orbital_groups",
+              "reason"
+            ],
+            "properties": {
+              "band_range_1based": {
+                "type": "array",
+                "items": {
+                  "type": "integer",
+                  "minimum": 1
+                },
+                "minItems": 2,
+                "maxItems": 2
+              },
+              "orbital_groups": {
+                "$ref": "#/$defs/basis"
+              },
+              "membership_kind": {
+                "type": "string",
+                "enum": [
+                  "complete_shells",
+                  "reviewed_spectral_block"
+                ]
+              },
+              "reason": {
+                "$ref": "#/$defs/nonempty_text"
+              }
+            }
+          }
+        },
+        "minimum_gap_eV": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "occupation_tolerance": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        }
+      }
+    },
+    "decision_stage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "role",
+        "manifest"
+      ],
+      "properties": {
+        "role": {
+          "enum": [
+            "initial",
+            "real_first_try",
+            "retry"
+          ]
+        },
+        "manifest": {
+          "const": "STAGE.json"
+        }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {"anyOf": [{"required": ["task_scope_review"]}, {"required": ["additional_basis_evidence"]}]},
+      "then": {
+        "required": ["task_scope_review", "additional_basis_evidence"],
+        "properties": {"orbital_decisions": {"items": {"required": ["task_role", "risk_if_included", "risk_if_omitted"]}}}
+      },
+      "description": "Legacy frozen archives retain their original syntax; current check_record/propose additionally require the task-first contract. Migration is explicit."
+    },
+    {
+      "if": {
+        "properties": {
+          "status": {
+            "enum": [
+              "basis_trial_candidate",
+              "proposed_trial"
+            ]
+          }
+        },
+        "required": [
+          "status"
+        ]
+      },
+      "then": {
+        "properties": {
+          "trial_basis": {
+            "minItems": 1
+          },
+          "orbital_decisions": {
+            "not": {
+              "contains": {
+                "properties": {
+                  "action": {
+                    "const": "defer"
+                  }
+                },
+                "required": [
+                  "action"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "status": {
+            "const": "proposed_trial"
+          }
+        },
+        "required": [
+          "status"
+        ]
+      },
+      "then": {
+        "properties": {
+          "windows": {
+            "type": "object",
+            "properties": {
+              "reference_domain": {
+                "properties": {
+                  "kind": {
+                    "const": "reviewed_target_manifold"
+                  }
+                }
+              }
+            }
+          },
+          "numerical_checks": {
+            "type": "object",
+            "properties": {
+              "gate_pass": {
+                "const": true
+              }
+            }
+          },
+          "next_action": {
+            "enum": [
+              "prepare_interface",
+              "trial_wannier"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "next_action": {
+            "enum": [
+              "prepare_interface",
+              "trial_wannier"
+            ]
+          }
+        },
+        "required": [
+          "next_action"
+        ]
+      },
+      "then": {
+        "properties": {
+          "status": {
+            "const": "proposed_trial"
+          }
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "band_range": {
+      "type": "array", "minItems": 2, "maxItems": 2,
+      "items": {"type": "integer", "minimum": 1}
+    },
+    "task_scope_review": {
+      "type": "object", "additionalProperties": false,
+      "required": ["format", "objective_kind", "objective", "requested_scope_evidence", "task_anchor_band_ranges_1based", "deep_blocks"],
+      "properties": {
+        "format": {"const": "task-scope-review-v1"},
+        "objective_kind": {"enum": ["primary_task_manifold", "explicitly_requested_extended_manifold"]},
+        "objective": {"$ref": "#/$defs/nonempty_text"},
+        "requested_scope_evidence": {"anyOf": [{"type": "null"}, {"$ref": "#/$defs/nonempty_text"}]},
+        "task_anchor_band_ranges_1based": {
+          "type": "array", "minItems": 1,
+          "items": {"$ref": "#/$defs/band_range"},
+          "description": "Independent task witness domain, declared before expanding target rows to complete the chosen manifold."
+        },
+        "deep_blocks": {
+          "type": "array",
+          "description": "Review actually concentrated deep spectral blocks, not the entire occupied manifold by default. No global-gap requirement for a deep-only role.",
+          "items": {
+            "type": "object", "additionalProperties": false,
+            "required": ["band_range_1based", "orbital_groups", "role", "reason"],
+            "properties": {
+              "band_range_1based": {"$ref": "#/$defs/band_range"},
+              "orbital_groups": {"$ref": "#/$defs/basis", "minItems": 1},
+              "role": {"enum": ["task_target", "retained_background", "outside_task"]},
+              "reason": {"$ref": "#/$defs/nonempty_text"}
+            }
+          }
+        }
+      },
+      "allOf": [{
+        "if": {"properties": {"objective_kind": {"const": "explicitly_requested_extended_manifold"}}},
+        "then": {"properties": {"requested_scope_evidence": {"$ref": "#/$defs/nonempty_text"}}},
+        "else": {"properties": {"requested_scope_evidence": {"type": "null"}}}
+      }]
+    },
+    "additional_basis_evidence": {
+      "type": "object", "additionalProperties": false,
+      "required": ["witness_k_band_1based", "representation_reason", "independent_of_deep_block"],
+      "properties": {
+        "witness_k_band_1based": {"$ref": "#/$defs/band_range"},
+        "representation_reason": {"$ref": "#/$defs/nonempty_text", "description": "Task representation concern or planned exploratory comparison; no mathematical impossibility proof is required."},
+        "independent_of_deep_block": {"type": "boolean"}
+      }
+    },
+    "nonempty_text": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "group": {
+      "type": "string",
+      "pattern": "^[A-Z][a-z]?:[spdf]$"
+    },
+    "basis": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/group"
+      },
+      "uniqueItems": true
+    },
+    "energy_pair": {
+      "type": "array",
+      "items": {
+        "type": "number"
+      },
+      "minItems": 2,
+      "maxItems": 2
+    },
+    "evidence_refs": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/nonempty_text"
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    }
+  }
+}
