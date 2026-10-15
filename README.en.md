@@ -259,6 +259,14 @@ Depending on the research objective, an agent can be asked to try a smaller orbi
 
 More specialized construction may involve maximal localization or projections at sites not occupied by atoms, for example when constructing few-band TB Hamiltonians for obstructed atomic insulators. These extensions require separate integration and review. **This release still requires `num_iter = 0`, but users can remove this restriction by explicitly modifying the relevant workflow policies and validation checks.** Future work will develop clearer guidance on few-band selection, projection sites and the corresponding acceptance criteria.
 
+### 4. Build and reuse your own material experience over time
+
+For long-term use, gradually organize experience from completed calculations: record the material structure, orbital basis, disentanglement and frozen windows, actual band fits, and the reasons for adjustments. When processing related structures or substitutions by elements in the same chemical group, an agent can use validated results from similar materials to choose a better initial basis and windows. This reduces repeated analysis and ineffective trials, saving tokens and computation. References can also be organized by the correspondence between Wyckoff positions and atomic orbitals to support reuse across related structures.
+
+For example, some Ba- and Sr-containing systems in our calculations required the nominally unoccupied `Ba:d` or `Sr:d` orbitals in the target TB Hamiltonian, together with a disentanglement window extending sufficiently high into the unoccupied bands to provide adequate states for DIS. Without relevant experience, agents such as GPT may eventually find a suitable setup but first run an inadequate trial, then add the d orbitals and progressively increase `dis_win_max` over subsequent trials. Records from similar materials can help identify these needs earlier and suggest a more suitable starting setup.
+
+Treat experience as a starting reference and check it against the current material's projected bands, research objective and actual fit. Matching elements alone does not justify copying a basis or windows. This release does not include a user experience library or retrieval module; see the [experience-library notes](wannier_mcp/workflow/docs/USER-EXPERIENCE-LIBRARY.md) for the planned organization.
+
 ## Contact
 
 [chenhao_liang2000@163.com](mailto:chenhao_liang2000@163.com) · [chenhao_liang@iphy.ac.cn](mailto:chenhao_liang@iphy.ac.cn)
