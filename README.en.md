@@ -265,8 +265,6 @@ For long-term use, gradually organize experience from completed calculations: re
 
 For example, some Ba- and Sr-containing systems in our calculations required the nominally unoccupied `Ba:d` or `Sr:d` orbitals in the target TB Hamiltonian, together with a disentanglement window extending sufficiently high into the unoccupied bands to provide adequate states for DIS. Without relevant experience, agents such as GPT may eventually find a suitable setup but first run an inadequate trial, then add the d orbitals and progressively increase `dis_win_max` over subsequent trials. Records from similar materials can help identify these needs earlier and suggest a more suitable starting setup.
 
-Treat experience as a starting reference and check it against the current material's projected bands, research objective and actual fit. Matching elements alone does not justify copying a basis or windows. This release does not include a user experience library or retrieval module; see the [experience-library notes](wannier_mcp/workflow/docs/USER-EXPERIENCE-LIBRARY.md) for the planned organization.
-
 ## Contact
 
 [chenhao_liang2000@163.com](mailto:chenhao_liang2000@163.com) · [chenhao_liang@iphy.ac.cn](mailto:chenhao_liang@iphy.ac.cn)

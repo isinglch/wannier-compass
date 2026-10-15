@@ -276,8 +276,6 @@ python examples/make_synthetic_case.py --out-dir /tmp/wannier-synthetic-case
 
 例如，在我们计算过的一些含 Ba、Sr 的体系中，构造目标 TB 哈密顿量需要加入名义上未占据的 `Ba:d` 或 `Sr:d` 轨道，并采用上界较高、包含较多导带空态的解纠缠窗口，为 DIS 提供充分的选择空间。没有相关经验时，GPT 等 Agent 即使最终能够找到合适方案，也可能先做一次不充分的尝试，再补入 d 轨道，并在后续尝试中逐步增大 `dis_win_max`，增加尝试轮次。如果已有相近材料的计算记录，就可以更早识别这些需求，直接提出更合适的起始方案。
 
-经验应作为起始参考，仍需结合当前材料的投影能带、研究目标和实际拟合结果复核，不能仅凭元素相同就照搬基组与窗口。本版本尚未包含用户经验库及其检索模块，相关整理思路见[经验库说明](wannier_mcp/workflow/docs/zh-CN/USER-EXPERIENCE-LIBRARY.md)。
-
 ## 联系我
 
 [chenhao_liang2000@163.com](mailto:chenhao_liang2000@163.com) · [chenhao_liang@iphy.ac.cn](mailto:chenhao_liang@iphy.ac.cn)
