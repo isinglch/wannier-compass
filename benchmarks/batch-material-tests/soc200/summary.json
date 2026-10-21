@@ -1,0 +1,31 @@
+{
+  "dataset": "SOC200_retained_best",
+  "materials": 200,
+  "attempts": 610,
+  "passed": 158,
+  "pass_rate_percent": 79.0,
+  "passed_mean_spread_A2": 2.524164560824843,
+  "valid_scored_materials": 199,
+  "missing_materials": [
+    "SOC-092"
+  ],
+  "scored_nonpasses": 41,
+  "extra_attempts_beyond_initial200": 410,
+  "mean_attempts_per_material": 3.05,
+  "attempt_accounting": {
+    "counting_unit": "One non-localization candidate attempt, or one localization attempt per material and source baseline model.",
+    "localization_rule": "Runs on the same source model with caps of 20, 50 or 100 iterations count together as one localization attempt. A different source model is counted separately.",
+    "nonlocalization_attempts": 461,
+    "localization_attempts": 149,
+    "attempts": 610,
+    "initial_attempts": 200,
+    "extra_attempts_beyond_initial200": 410,
+    "mean_attempts_per_material": 3.05,
+    "raw_localization_execution_records": 213,
+    "merged_localization_repeat_records": 64,
+    "raw_total_execution_records": 674,
+    "per_material_counts_file": "attempt_counts.csv"
+  },
+  "source_dataset_url": "https://archive.materialscloud.org/records/fhp6p-vdm66",
+  "paper_url": "https://doi.org/10.1038/s41524-025-01835-8"
+}

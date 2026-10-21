@@ -1,0 +1,9 @@
+{
+  "dataset": "Nano_deduplicated100",
+  "materials": 100,
+  "attempts": 172,
+  "passed": 73,
+  "pass_rate_percent": 73.0,
+  "passed_mean_spread_A2": 2.22753,
+  "mean_attempts_per_material": 1.72
+}

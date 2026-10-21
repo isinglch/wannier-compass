@@ -8,22 +8,22 @@
   "raw_material_data_included": false,
   "unpublished_structures_included": false,
   "display_assets_in_operational_package_data": false,
-  "public_benchmark_evidence": "GPT band-fit PDF covering35 named materials; no raw calculation inputs.",
+  "public_benchmark_evidence": "35-material GPT band-fit PDF; Nano100 and SOC200 derived CSV/JSON statistics, distribution plots and selected native band-fit figures.",
   "files": [
     {
       "path": ".gitignore",
-      "bytes": 810,
-      "sha256": "e80398e34468e6b9bb976c1d1ad7e7d68913edd30a4426c97b7e89d58baee4e7"
+      "bytes": 1764,
+      "sha256": "4b563ec173639219976cbad74658b6833e27c6f06d2111369b75028843341520"
     },
     {
       "path": "README.en.md",
-      "bytes": 25259,
-      "sha256": "a20cf7da49a5f85f7a64b2819ff38823b43640f50f774b23b7ae462b59749824"
+      "bytes": 25971,
+      "sha256": "ca776e7b712b9207b2aa204856380b272820c76d971f3de1e9e33a44a4798b6b"
     },
     {
       "path": "README.md",
-      "bytes": 24815,
-      "sha256": "326a7ecbeb4272125ad61f2f1e8399178443dd709141d9a7570720ead02d5850"
+      "bytes": 25453,
+      "sha256": "f93003cd18520482b2eac74cba5db186d18113756fad1d97bf8854cdff02c3a9"
     },
     {
       "path": "README.zh-CN.md",
@@ -39,6 +39,121 @@
       "path": "SKILL.md",
       "bytes": 3438,
       "sha256": "6d1630fbcd8e41b6b04079d997d209f109ed44c8a42429218ae0838a8bffb9a0"
+    },
+    {
+      "path": "benchmarks/batch-material-tests/examples/nano100-Cr2O3.png",
+      "bytes": 758903,
+      "sha256": "c8fe66574373ff91d7fe541a8de86dd250783f536bba21c1a00003c1ca8ad35e"
+    },
+    {
+      "path": "benchmarks/batch-material-tests/examples/nano100-CsEuCl3.png",
+      "bytes": 948477,
+      "sha256": "89682da9839398bfcd7f2acc309b7aa3ae7fb74faa52ed1e57220d63b8d44061"
+    },
+    {
+      "path": "benchmarks/batch-material-tests/examples/soc200-AlCo.png",
+      "bytes": 622693,
+      "sha256": "0f576a984344c2e720018eec70792b20ed1ba48ce4b9b6404bf9147785223761"
+    },
+    {
+      "path": "benchmarks/batch-material-tests/examples/soc200-NaI.png",
+      "bytes": 451947,
+      "sha256": "8fd1ebca690252b817052c653d81449d6cf76fec48c69bb347286a1f86e5fe07"
+    },
+    {
+      "path": "benchmarks/batch-material-tests/nano100.zip",
+      "bytes": 418997,
+      "sha256": "bd9ced96474e2e66e17a78dfdb88759cc1841c601c24c50e2d27ebdbfbe782a9"
+    },
+    {
+      "path": "benchmarks/batch-material-tests/nano100/README.txt",
+      "bytes": 694,
+      "sha256": "1a5df47fe06beb8d6db5a8ef171d95d22a2cae58b0fe021b00bc5dd15414df57"
+    },
+    {
+      "path": "benchmarks/batch-material-tests/nano100/comparison.csv",
+      "bytes": 117,
+      "sha256": "5b739f2b69efb5d67cb9a5159cb08e3a14fbd8f4a5306de1de0b1271f597e70d"
+    },
+    {
+      "path": "benchmarks/batch-material-tests/nano100/plots/eta2_histogram_0_30meV.png",
+      "bytes": 205480,
+      "sha256": "c96066c443746eb633e25a949ecb8ab4a62fc41e2be737830409162d84144278"
+    },
+    {
+      "path": "benchmarks/batch-material-tests/nano100/plots/spread_histograms.png",
+      "bytes": 261697,
+      "sha256": "6d90d6cc49180b4090203de0210b155dae3e6873fa168b25f4e57aafe1ee54e0"
+    },
+    {
+      "path": "benchmarks/batch-material-tests/nano100/results.csv",
+      "bytes": 14279,
+      "sha256": "b01f2dded93fbe848dbf16cf5b38183c67c4f8a019661d0adaba1698dd587449"
+    },
+    {
+      "path": "benchmarks/batch-material-tests/nano100/summary.json",
+      "bytes": 198,
+      "sha256": "2d45597efe87a2cbf7ebc8290585108b5e94038f799d1adbfca99314ad09b222"
+    },
+    {
+      "path": "benchmarks/batch-material-tests/paper_comparison.csv",
+      "bytes": 483,
+      "sha256": "513f1941b25e061ef02bbce3e31e8765de86791a57e96343ef50b3fa538b7a72"
+    },
+    {
+      "path": "benchmarks/batch-material-tests/soc200.zip",
+      "bytes": 222124,
+      "sha256": "175847cbbe92a8c834750e98d953fe6db15e22c76ab5eb9445e714022578ffaa"
+    },
+    {
+      "path": "benchmarks/batch-material-tests/soc200/README.txt",
+      "bytes": 1830,
+      "sha256": "da83277ee428369548815ec74ae61b7dcad9163e3a88b81311c307966c52d44e"
+    },
+    {
+      "path": "benchmarks/batch-material-tests/soc200/SOURCES.txt",
+      "bytes": 493,
+      "sha256": "4135531f3c3706f54628c928454db45a5e1012ee47a08b4363bd44350c1b471f"
+    },
+    {
+      "path": "benchmarks/batch-material-tests/soc200/attempt_accounting.json",
+      "bytes": 692,
+      "sha256": "dd647099c76b18932daac875765f19ff10fc5438f2f30d9b36fe4b9cf04768c2"
+    },
+    {
+      "path": "benchmarks/batch-material-tests/soc200/attempt_counts.csv",
+      "bytes": 3069,
+      "sha256": "f6cd8bee9ccd954d1897cb9169f49b1f0d54589a37bfc437e1b78c15dd2734f8"
+    },
+    {
+      "path": "benchmarks/batch-material-tests/soc200/comparison.csv",
+      "bytes": 132,
+      "sha256": "0daf19c7bf8c9f5f631f5d43c618efccca9308a601234a77b68346b7c04443a3"
+    },
+    {
+      "path": "benchmarks/batch-material-tests/soc200/plots/eta2_histogram_0_30meV.png",
+      "bytes": 105078,
+      "sha256": "203db07697548a0f1980a5d5868c15dda92e1955d276465d87981dc467aeb969"
+    },
+    {
+      "path": "benchmarks/batch-material-tests/soc200/plots/spread_histograms.png",
+      "bytes": 128065,
+      "sha256": "d5bc9654b528ca2585907400f75fa270e43c6347e5c1f8c1b4fc11658eef1177"
+    },
+    {
+      "path": "benchmarks/batch-material-tests/soc200/results.csv",
+      "bytes": 20361,
+      "sha256": "7de0b1358ebe4832d516541c11fdfd3d188e102d535a1f9eb9600d4065682410"
+    },
+    {
+      "path": "benchmarks/batch-material-tests/soc200/summary.json",
+      "bytes": 1241,
+      "sha256": "fb014e2ae83b70a55a2cd130517186dd8f5bae8cc6b6db91667df69ee7306dba"
+    },
+    {
+      "path": "benchmarks/batch-material-tests/summary.json",
+      "bytes": 2637,
+      "sha256": "e73a3aab2e1612ad179bde1af4ba1bbd48125fdcfae1321ae4b0e017ba30860b"
     },
     {
       "path": "benchmarks/gpt-band-fits.pdf",
@@ -89,6 +204,16 @@
       "path": "docs/assets/wannier-running.zh-CN.png",
       "bytes": 2044736,
       "sha256": "90191bcee08ce59896d9d19d0b95b36141011a8df08775a3d7b10ba6500ad851"
+    },
+    {
+      "path": "docs/benchmarks/batch-material-tests.en.md",
+      "bytes": 8441,
+      "sha256": "e06b972e8d90c20ac8a49572b6d5c47255659896fba1eaa05c48ee9c3d4df401"
+    },
+    {
+      "path": "docs/benchmarks/batch-material-tests.md",
+      "bytes": 7638,
+      "sha256": "c3470deda378c26437efee54ec595ee2642705e46a816ebf1cdaff3f126e8453"
     },
     {
       "path": "examples/make_synthetic_case.py",
@@ -601,6 +726,9 @@
       "sha256": "806bcd5112130f57ed758874c38216b4368b8a5d94b1b7f308905a3a32438a05"
     }
   ],
-  "previous_repository_release_id": "419d6eca8cb28b89ca88a092fe3ae56d94692924f6f979c087e67cff8845f506",
-  "release_id": "e1e7ac6bbc824a3bb5c02ec489607b0e6f34f15014bf57e961224e0cb38a5339"
+  "previous_repository_release_id": "e1e7ac6bbc824a3bb5c02ec489607b0e6f34f15014bf57e961224e0cb38a5339",
+  "repository_presentation_revision": "2026-10-22",
+  "derived_batch_benchmark_data_included": true,
+  "release_id_algorithm": "sha256 of sorted-key compact UTF-8 JSON excluding release_id",
+  "release_id": "a157bf35bc175658f1bf86fd0e2652b9834d926dcbf262ec6511f15e7da1018b"
 }

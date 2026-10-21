@@ -1,0 +1,9 @@
+Crystal structures
+Materials Cloud Archive, version 2
+https://archive.materialscloud.org/records/fhp6p-vdm66
+
+Reference publication
+Y. Jiang et al., "Robust Wannierization including magnetization and spin-orbit coupling via projectability disentanglement," npj Computational Materials 11, 353 (2025).
+https://doi.org/10.1038/s41524-025-01835-8
+
+The crystal structures originate from the linked archive. The Wannier models and statistics in this package were generated in our SOC200 benchmark.

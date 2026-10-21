@@ -131,6 +131,8 @@ Evidence analysis and scientific input/output contracts do not require SSH or Sl
 
 ## Test results and cost comparison
 
+**New batch material tests:** WannierCompass reaches pass rates of 73% on a 100-material set including magnetic compounds and 79% on the literature SOC200 set. See [batch material tests and the literature comparison](docs/benchmarks/batch-material-tests.en.md) for results, construction attempts and per-material data.
+
 For a batch of materials, the workflow first creates calculation directories. The agent completes DFT calculations using the material information and specified calculation settings. Once DFT calculations for the entire batch are complete, Wannier TB Hamiltonians are constructed and checked.
 
 ### Coverage of this test batch
@@ -264,6 +266,10 @@ More specialized construction may involve maximal localization or projections at
 For long-term use, gradually organize experience from completed calculations: record the material structure, orbital basis, disentanglement and frozen windows, actual band fits, and the reasons for adjustments. When processing related structures or substitutions by elements in the same chemical group, an agent can use validated results from similar materials to choose a better initial basis and windows. This reduces repeated analysis and ineffective trials, saving tokens and computation. References can also be organized by the correspondence between Wyckoff positions and atomic orbitals to support reuse across related structures.
 
 For example, some Ba- and Sr-containing systems in our calculations required the nominally unoccupied `Ba:d` or `Sr:d` orbitals in the target TB Hamiltonian, together with a disentanglement window extending sufficiently high into the unoccupied bands to provide adequate states for DIS. Without relevant experience, agents such as GPT may eventually find a suitable setup but first run an inadequate trial, then add the d orbitals and progressively increase `dis_win_max` over subsequent trials. Records from similar materials can help identify these needs earlier and suggest a more suitable starting setup.
+
+### 5. Limitations of the construction method
+
+Orbital and window optimization remain limited by the available projector basis; in some systems, adding hydrogenic projectors may be necessary to obtain a high-quality Wannier model. See the results and discussion in [our batch material tests and literature comparison](docs/benchmarks/batch-material-tests.en.md#discussion-and-implications).
 
 ## Contact
 
