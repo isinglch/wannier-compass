@@ -1,0 +1,5 @@
+method,potential_library,additional_hydrogenic_projectors,materials,additional_parameter_attempts,total_candidates,mean_candidates_per_material,passed,pass_rate_percent,localization_iteration_cap
+Jiang et al. 2025,PseudoDojo,False,200,1499,1699,8.495,152,76.0,4000
+Jiang et al. 2025,modified-pslibrary,False,200,682,882,4.41,181,90.5,4000
+Jiang et al. 2025,PseudoDojo,True,200,123,323,1.615,197,98.5,4000
+Jiang et al. 2025,modified-pslibrary,True,200,81,281,1.405,198,99.0,4000

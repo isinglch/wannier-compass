@@ -11,6 +11,7 @@ dist/
 *.edit.lock
 *.log
 POTCAR
+POTCAR*
 WAVECAR
 CHGCAR
 PROCAR
@@ -51,3 +52,19 @@ INCAR
 # User-approved six-case DIS illustration for the project homepage.
 !docs/assets/gpt-selected-six-dis.png
 !docs/assets/gpt-selected-six-dis.pdf
+
+# Reviewed batch benchmark figures and derived tables; keep raw inputs excluded.
+!/benchmarks/batch-material-tests/examples/nano100-Cr2O3.png
+!/benchmarks/batch-material-tests/examples/nano100-CsEuCl3.png
+!/benchmarks/batch-material-tests/examples/soc200-AlCo.png
+!/benchmarks/batch-material-tests/examples/soc200-NaI.png
+!/benchmarks/batch-material-tests/nano100/comparison.csv
+!/benchmarks/batch-material-tests/nano100/plots/eta2_histogram_0_30meV.png
+!/benchmarks/batch-material-tests/nano100/plots/spread_histograms.png
+!/benchmarks/batch-material-tests/nano100/results.csv
+!/benchmarks/batch-material-tests/paper_comparison.csv
+!/benchmarks/batch-material-tests/soc200/attempt_counts.csv
+!/benchmarks/batch-material-tests/soc200/comparison.csv
+!/benchmarks/batch-material-tests/soc200/plots/eta2_histogram_0_30meV.png
+!/benchmarks/batch-material-tests/soc200/plots/spread_histograms.png
+!/benchmarks/batch-material-tests/soc200/results.csv

@@ -1,0 +1,14 @@
+{
+  "counting_unit": "One non-localization candidate attempt, or one localization attempt per material and source baseline model.",
+  "localization_rule": "Runs on the same source model with caps of 20, 50 or 100 iterations count together as one localization attempt. A different source model is counted separately.",
+  "nonlocalization_attempts": 461,
+  "localization_attempts": 149,
+  "attempts": 610,
+  "initial_attempts": 200,
+  "extra_attempts_beyond_initial200": 410,
+  "mean_attempts_per_material": 3.05,
+  "raw_localization_execution_records": 213,
+  "merged_localization_repeat_records": 64,
+  "raw_total_execution_records": 674,
+  "per_material_counts_file": "attempt_counts.csv"
+}

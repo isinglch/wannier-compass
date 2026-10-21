@@ -1,0 +1,80 @@
+{
+  "tests": [
+    {
+      "dataset": "Nano_deduplicated100",
+      "materials": 100,
+      "attempts": 172,
+      "passed": 73,
+      "pass_rate_percent": 73.0,
+      "mean_attempts_per_material": 1.72,
+      "passed_mean_spread_A2": 2.22753
+    },
+    {
+      "dataset": "SOC200_retained_best",
+      "materials": 200,
+      "attempts": 610,
+      "passed": 158,
+      "pass_rate_percent": 79.0,
+      "mean_attempts_per_material": 3.05,
+      "passed_mean_spread_A2": 2.524164560824843
+    }
+  ],
+  "literature": [
+    {
+      "method": "Jiang et al. 2025",
+      "potential_library": "PseudoDojo",
+      "additional_hydrogenic_projectors": false,
+      "materials": 200,
+      "additional_parameter_attempts": 1499,
+      "total_candidates": 1699,
+      "mean_candidates_per_material": 8.495,
+      "passed": 152,
+      "pass_rate_percent": 76.0,
+      "localization_iteration_cap": 4000
+    },
+    {
+      "method": "Jiang et al. 2025",
+      "potential_library": "modified-pslibrary",
+      "additional_hydrogenic_projectors": false,
+      "materials": 200,
+      "additional_parameter_attempts": 682,
+      "total_candidates": 882,
+      "mean_candidates_per_material": 4.41,
+      "passed": 181,
+      "pass_rate_percent": 90.5,
+      "localization_iteration_cap": 4000
+    },
+    {
+      "method": "Jiang et al. 2025",
+      "potential_library": "PseudoDojo",
+      "additional_hydrogenic_projectors": true,
+      "materials": 200,
+      "additional_parameter_attempts": 123,
+      "total_candidates": 323,
+      "mean_candidates_per_material": 1.615,
+      "passed": 197,
+      "pass_rate_percent": 98.5,
+      "localization_iteration_cap": 4000
+    },
+    {
+      "method": "Jiang et al. 2025",
+      "potential_library": "modified-pslibrary",
+      "additional_hydrogenic_projectors": true,
+      "materials": 200,
+      "additional_parameter_attempts": 81,
+      "total_candidates": 281,
+      "mean_candidates_per_material": 1.405,
+      "passed": 198,
+      "pass_rate_percent": 99.0,
+      "localization_iteration_cap": 4000
+    }
+  ],
+  "metric": "eta2 <= 20 meV",
+  "localization_policy": "First attempt num_iter=0; later localization capped at 100 steps.",
+  "SOC200_attempt_rule": "Group localization runs by material and source baseline model, regardless of 20/50/100 iteration cap.",
+  "potential_library": "VASP standard PAW-PBE",
+  "additional_hydrogenic_projectors": false,
+  "paper_url": "https://doi.org/10.1038/s41524-025-01835-8",
+  "structure_dataset_url": "https://archive.materialscloud.org/records/fhp6p-vdm66",
+  "candidate_count_archive_url": "https://archive.materialscloud.org/records/tc8pz-ddy75"
+}
