@@ -1,0 +1,92 @@
+{
+  "task": "Construct and evaluate the relevant valence, Fermi crossings and related low conduction from the supplied DFT evidence.",
+  "execute": true,
+  "max_trials": 3,
+  "max_steps": 32,
+  "max_repair_attempts": 8,
+  "llm": {
+    "backend": "openai",
+    "temperature": 0.2,
+    "timeout_seconds": 600,
+    "max_attempts": 4,
+    "prompt_guard_fraction": 0.8,
+    "request_extra": {
+      "response_format": {
+        "type": "json_object"
+      }
+    },
+    "role_sessions": true,
+    "api": "chat_completions",
+    "compression": {
+      "enabled": true,
+      "token_counting": "measured",
+      "trigger_fraction": 0.8,
+      "target_fraction": 0.5,
+      "safety_tokens": 8192,
+      "summary_max_tokens": 8192
+    },
+    "length_recovery": {
+      "enabled": true,
+      "max_retries": 2
+    },
+    "stream": true
+  },
+  "execution": {
+    "adapter": "vasp_wannier",
+    "vasp": [
+      "SET_VASP_EXECUTABLE"
+    ],
+    "wannier90": [
+      "SET_WANNIER90_EXECUTABLE"
+    ],
+    "mesh_grid": [
+      8,
+      8,
+      8
+    ],
+    "timeout_seconds": 3600
+  },
+  "plotting": {
+    "enabled": true
+  },
+  "scheduler": {
+    "enabled": true,
+    "max_decisions": 24,
+    "max_execution_retries": 2
+  },
+  "default_model": "default",
+  "models": {
+    "default": {
+      "base_url": "",
+      "model": "",
+      "api_key_env": "MODEL_API_KEY",
+      "max_tokens": 65536,
+      "context_tokens": 131072,
+      "proxy_mode": "direct"
+    }
+  },
+  "runtime": {
+    "env_file": ".env",
+    "modules": {
+      "load": []
+    },
+    "environment": {
+      "OPENBLAS_NUM_THREADS": "1",
+      "OMP_NUM_THREADS": "1",
+      "MKL_NUM_THREADS": "1",
+      "NUMEXPR_NUM_THREADS": "1",
+      "PYTHONUNBUFFERED": "1",
+      "PYTHONDONTWRITEBYTECODE": "1"
+    },
+    "prepend_path": [],
+    "prepend_library_path": [],
+    "required_env": []
+  },
+  "paths": {
+    "case_dir": null,
+    "runs_root": "runs"
+  },
+  "viewer": {
+    "port": 8765
+  }
+}

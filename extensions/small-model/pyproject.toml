@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pythonagent-scheduler"
+version = "0.2.0.dev11"
+description = "Independent operational scheduler with model-owned scientific plans and version-bound execution"
+readme = "QUICKSTART.en.md"
+requires-python = ">=3.10"
+dependencies = ["numpy>=1.24", "scipy>=1.10", "jsonschema>=4.17", "matplotlib>=3.6"]
+
+[project.scripts]
+pythonagent-scheduler = "pythonagent.startup:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+pythonagent = ["guides/*.md", "guides/*.json", "guides/mcp/*.md", "guides/mcp/docs/*.md", "web/*.html", "web/*.js", "web/*.css"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

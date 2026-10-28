@@ -1,0 +1,17 @@
+#!/usr/bin/env python3
+"""Run the independent checkout with its own source and configuration."""
+
+from pathlib import Path
+import sys
+
+
+def launch():
+    root = Path(__file__).resolve().parent
+    sys.path.insert(0, str(root / "src"))
+    from pythonagent.startup import main
+
+    return main(project_root=root)
+
+
+if __name__ == "__main__":
+    raise SystemExit(launch())

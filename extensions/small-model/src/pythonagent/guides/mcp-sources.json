@@ -1,0 +1,870 @@
+{
+  "format": "mcp-guidance-snapshot-v1",
+  "snapshot_utc": "2026-10-15T17:52:47.580234+00:00",
+  "scope": "Exact English source documents and project skills; no historical material cases, code, databases or external account skills.",
+  "update_policy": "Standalone one-time snapshot; no runtime reading of or synchronization with the source project.",
+  "documents": [
+    {
+      "path": "guides/mcp/ROOT-SKILL.md",
+      "source_repository_path": "SKILL.md",
+      "sha256": "6d1630fbcd8e41b6b04079d997d209f109ed44c8a42429218ae0838a8bffb9a0",
+      "title": "WannierCompass",
+      "total_lines": 22,
+      "sections": [
+        {
+          "heading": "# WannierCompass",
+          "start_line_1based": 6,
+          "offset": 5
+        }
+      ]
+    },
+    {
+      "path": "guides/mcp/SKILL.md",
+      "source_repository_path": "wannier_mcp/workflow/SKILL.md",
+      "sha256": "f02721cbd7f727136198925e5a471fb8c73955defafc87bc4a5baf3b0dc24f9e",
+      "title": "WannierCompass scientific workflow",
+      "total_lines": 26,
+      "sections": [
+        {
+          "heading": "# WannierCompass scientific workflow",
+          "start_line_1based": 6,
+          "offset": 5
+        }
+      ]
+    },
+    {
+      "path": "guides/mcp/docs/CONSTRUCTION-OVERVIEW.md",
+      "source_repository_path": "wannier_mcp/workflow/docs/CONSTRUCTION-OVERVIEW.md",
+      "sha256": "de69d33d805d3fc33e729cfd92941405744c893f8d6be4186081ebcf29bc3798",
+      "title": "Full-band Wannier overview",
+      "total_lines": 96,
+      "sections": [
+        {
+          "heading": "# Full-band Wannier overview",
+          "start_line_1based": 1,
+          "offset": 0
+        },
+        {
+          "heading": "## What are we trying to build?",
+          "start_line_1based": 5,
+          "offset": 4
+        },
+        {
+          "heading": "## What should a good result look like?",
+          "start_line_1based": 11,
+          "offset": 10
+        },
+        {
+          "heading": "## What choices do we make next?",
+          "start_line_1based": 21,
+          "offset": 20
+        },
+        {
+          "heading": "## How do we choose the orbitals?",
+          "start_line_1based": 29,
+          "offset": 28
+        },
+        {
+          "heading": "## How low should the valence windows go?",
+          "start_line_1based": 41,
+          "offset": 40
+        },
+        {
+          "heading": "## How high should the conduction DIS window go?",
+          "start_line_1based": 55,
+          "offset": 54
+        },
+        {
+          "heading": "## How high should conduction frozen go?",
+          "start_line_1based": 65,
+          "offset": 64
+        },
+        {
+          "heading": "## What should we change if the fit is poor?",
+          "start_line_1based": 80,
+          "offset": 79
+        }
+      ]
+    },
+    {
+      "path": "guides/mcp/docs/DECISION-STAGES.md",
+      "source_repository_path": "wannier_mcp/workflow/docs/DECISION-STAGES.md",
+      "sha256": "d012898a76280b435251d78a7facfaca58afaec656c4369e81b6e4d6195ee23e",
+      "title": "Decision stages, trials, and experience interfaces",
+      "total_lines": 102,
+      "sections": [
+        {
+          "heading": "# Decision stages, trials, and experience interfaces",
+          "start_line_1based": 1,
+          "offset": 0
+        },
+        {
+          "heading": "## Usage sequence",
+          "start_line_1based": 18,
+          "offset": 17
+        },
+        {
+          "heading": "## Actual results, next trials, and technical restarts",
+          "start_line_1based": 58,
+          "offset": 57
+        },
+        {
+          "heading": "## Retrieval and ablations",
+          "start_line_1based": 83,
+          "offset": 82
+        },
+        {
+          "heading": "## Optional evaluation usage accounting",
+          "start_line_1based": 96,
+          "offset": 95
+        }
+      ]
+    },
+    {
+      "path": "guides/mcp/docs/DFT-PLOTS.md",
+      "source_repository_path": "wannier_mcp/workflow/docs/DFT-PLOTS.md",
+      "sha256": "3e8141e70777d978c85d3a1e0500c434305b9a372bdede6dd3fb7ebb67e73c90",
+      "title": "DFT and orbital-projected band figures",
+      "total_lines": 24,
+      "sections": [
+        {
+          "heading": "# DFT and orbital-projected band figures",
+          "start_line_1based": 1,
+          "offset": 0
+        }
+      ]
+    },
+    {
+      "path": "guides/mcp/docs/DFT-PREPARATION.md",
+      "source_repository_path": "wannier_mcp/workflow/docs/DFT-PREPARATION.md",
+      "sha256": "4514b9e45ee51d513bfd89137c915407de0f89a5109e22348203c552b8580049",
+      "title": "Preparing DFT evidence for Wannier construction",
+      "total_lines": 127,
+      "sections": [
+        {
+          "heading": "# Preparing DFT evidence for Wannier construction",
+          "start_line_1based": 1,
+          "offset": 0
+        },
+        {
+          "heading": "## Supported scope",
+          "start_line_1based": 21,
+          "offset": 20
+        },
+        {
+          "heading": "## 1. Inputs and resources",
+          "start_line_1based": 27,
+          "offset": 26
+        },
+        {
+          "heading": "## 2. Execution and collection",
+          "start_line_1based": 82,
+          "offset": 81
+        },
+        {
+          "heading": "## 3. Additional bands and interface preparation",
+          "start_line_1based": 112,
+          "offset": 111
+        }
+      ]
+    },
+    {
+      "path": "guides/mcp/docs/DOCUMENTATION.md",
+      "source_repository_path": "wannier_mcp/workflow/docs/DOCUMENTATION.md",
+      "sha256": "5b3762f11f3970b00b5faaa2ddaf4557a9df684378cb1b8662a471d4a629aee7",
+      "title": "Documentation, language, and reproducibility conventions",
+      "total_lines": 26,
+      "sections": [
+        {
+          "heading": "# Documentation, language, and reproducibility conventions",
+          "start_line_1based": 1,
+          "offset": 0
+        },
+        {
+          "heading": "## Language layout",
+          "start_line_1based": 3,
+          "offset": 2
+        },
+        {
+          "heading": "## Scientific authority and terminology",
+          "start_line_1based": 11,
+          "offset": 10
+        },
+        {
+          "heading": "## Language-only revisions",
+          "start_line_1based": 20,
+          "offset": 19
+        }
+      ]
+    },
+    {
+      "path": "guides/mcp/docs/EVALUATION-AND-KNOWLEDGE.md",
+      "source_repository_path": "wannier_mcp/workflow/docs/EVALUATION-AND-KNOWLEDGE.md",
+      "sha256": "758ca7c18f0ef7f2c61990bbde11f501d62c1221481c99ec39dd8abf84497506",
+      "title": "Independent evaluation and experience accumulation",
+      "total_lines": 55,
+      "sections": [
+        {
+          "heading": "# Independent evaluation and experience accumulation",
+          "start_line_1based": 1,
+          "offset": 0
+        },
+        {
+          "heading": "## 1. Run modes",
+          "start_line_1based": 5,
+          "offset": 4
+        },
+        {
+          "heading": "## 2. Distribution and execution boundaries",
+          "start_line_1based": 19,
+          "offset": 18
+        },
+        {
+          "heading": "## 3. Proposed experience-store structure",
+          "start_line_1based": 29,
+          "offset": 28
+        },
+        {
+          "heading": "## 4. Measuring experience benefits",
+          "start_line_1based": 41,
+          "offset": 40
+        },
+        {
+          "heading": "## General reasoning versus material answers",
+          "start_line_1based": 47,
+          "offset": 46
+        },
+        {
+          "heading": "## Available interfaces",
+          "start_line_1based": 53,
+          "offset": 52
+        }
+      ]
+    },
+    {
+      "path": "guides/mcp/docs/FIRST-TRIAL-CARD.md",
+      "source_repository_path": "wannier_mcp/workflow/docs/FIRST-TRIAL-CARD.md",
+      "sha256": "99496aca552a78a0ae79133637eee8dbf011ef0c831c57efecfb59d00fd5ec65",
+      "title": "First-trial decision card",
+      "total_lines": 40,
+      "sections": [
+        {
+          "heading": "# First-trial decision card",
+          "start_line_1based": 1,
+          "offset": 0
+        },
+        {
+          "heading": "## Decide in this order",
+          "start_line_1based": 5,
+          "offset": 4
+        },
+        {
+          "heading": "## Resolve the two frozen edges independently",
+          "start_line_1based": 18,
+          "offset": 17
+        },
+        {
+          "heading": "## Tool loop",
+          "start_line_1based": 26,
+          "offset": 25
+        }
+      ]
+    },
+    {
+      "path": "guides/mcp/docs/FIT-PLOTTING.md",
+      "source_repository_path": "wannier_mcp/workflow/docs/FIT-PLOTTING.md",
+      "sha256": "3914f72aa3cb193df3433a0cbb459100ea1237fba481ea1ffa017ba4288e558f",
+      "title": "Current-trial DFT/Wannier fit figures",
+      "total_lines": 70,
+      "sections": [
+        {
+          "heading": "# Current-trial DFT/Wannier fit figures",
+          "start_line_1based": 1,
+          "offset": 0
+        },
+        {
+          "heading": "## Inputs",
+          "start_line_1based": 5,
+          "offset": 4
+        },
+        {
+          "heading": "## Segment validation",
+          "start_line_1based": 22,
+          "offset": 21
+        },
+        {
+          "heading": "## Optional mapping and metrics",
+          "start_line_1based": 48,
+          "offset": 47
+        },
+        {
+          "heading": "## Outputs and limits",
+          "start_line_1based": 66,
+          "offset": 65
+        }
+      ]
+    },
+    {
+      "path": "guides/mcp/docs/INDEPENDENT-REVIEW.md",
+      "source_repository_path": "wannier_mcp/workflow/docs/INDEPENDENT-REVIEW.md",
+      "sha256": "8b38441bdaa061a744479aae7e4b0cec5498fd9591c1a48002f7d499a99972db",
+      "title": "Independent review: evidence, judgment, and audit",
+      "total_lines": 41,
+      "sections": [
+        {
+          "heading": "# Independent review: evidence, judgment, and audit",
+          "start_line_1based": 1,
+          "offset": 0
+        },
+        {
+          "heading": "## Input packet",
+          "start_line_1based": 7,
+          "offset": 6
+        },
+        {
+          "heading": "## Required physical decisions",
+          "start_line_1based": 17,
+          "offset": 16
+        },
+        {
+          "heading": "## Proposal and audit",
+          "start_line_1based": 24,
+          "offset": 23
+        },
+        {
+          "heading": "## Evaluation record",
+          "start_line_1based": 39,
+          "offset": 38
+        }
+      ]
+    },
+    {
+      "path": "guides/mcp/docs/INTERFACES.md",
+      "source_repository_path": "wannier_mcp/workflow/docs/INTERFACES.md",
+      "sha256": "055d59e90982e362789a04135e3167a229bc8caa0d5c2882a2c122e05123832b",
+      "title": "Scientific interface contract",
+      "total_lines": 41,
+      "sections": [
+        {
+          "heading": "# Scientific interface contract",
+          "start_line_1based": 1,
+          "offset": 0
+        },
+        {
+          "heading": "## Inputs, outputs and boundaries",
+          "start_line_1based": 5,
+          "offset": 4
+        },
+        {
+          "heading": "## Execution integration",
+          "start_line_1based": 27,
+          "offset": 26
+        },
+        {
+          "heading": "## Return envelope",
+          "start_line_1based": 35,
+          "offset": 34
+        },
+        {
+          "heading": "## Selection scope audit",
+          "start_line_1based": 39,
+          "offset": 38
+        }
+      ]
+    },
+    {
+      "path": "guides/mcp/docs/MANIFOLD-SELECTION.md",
+      "source_repository_path": "wannier_mcp/workflow/docs/MANIFOLD-SELECTION.md",
+      "sha256": "7d70ddd27ad895f67816ec69ad38ba0f4458a0882ce4447dc44522e9e42306a6",
+      "title": "Complete-manifold selection without execution",
+      "total_lines": 282,
+      "sections": [
+        {
+          "heading": "# Complete-manifold selection without execution",
+          "start_line_1based": 1,
+          "offset": 0
+        },
+        {
+          "heading": "## Workflow and evidence",
+          "start_line_1based": 9,
+          "offset": 8
+        },
+        {
+          "heading": "### v3 task scope and extra channels",
+          "start_line_1based": 36,
+          "offset": 35
+        },
+        {
+          "heading": "## DFT-space assessment: physical outer first",
+          "start_line_1based": 50,
+          "offset": 49
+        },
+        {
+          "heading": "## Positive frozen proposals and negative screening",
+          "start_line_1based": 65,
+          "offset": 64
+        },
+        {
+          "heading": "## Commands and review contract",
+          "start_line_1based": 81,
+          "offset": 80
+        },
+        {
+          "heading": "## Occupied-prefix exclusions and conduction scope",
+          "start_line_1based": 230,
+          "offset": 229
+        },
+        {
+          "heading": "## Evidence tools and explicit reviewed overrides",
+          "start_line_1based": 256,
+          "offset": 255
+        },
+        {
+          "heading": "## Exploratory trials under uncertainty",
+          "start_line_1based": 272,
+          "offset": 271
+        }
+      ]
+    },
+    {
+      "path": "guides/mcp/docs/MATERIAL-LAYOUT.md",
+      "source_repository_path": "wannier_mcp/workflow/docs/MATERIAL-LAYOUT.md",
+      "sha256": "410a87f7b05c10d3f54c9f453ca84d6d36aa93c28d12edfe3cb1976626a66f89",
+      "title": "Standard per-material workspace",
+      "total_lines": 56,
+      "sections": [
+        {
+          "heading": "# Standard per-material workspace",
+          "start_line_1based": 1,
+          "offset": 0
+        },
+        {
+          "heading": "## Existing and new DFT",
+          "start_line_1based": 27,
+          "offset": 26
+        },
+        {
+          "heading": "## Publication means local display",
+          "start_line_1based": 52,
+          "offset": 51
+        }
+      ]
+    },
+    {
+      "path": "guides/mcp/docs/PHYSICAL-REASONING.md",
+      "source_repository_path": "wannier_mcp/workflow/docs/PHYSICAL-REASONING.md",
+      "sha256": "929ea2dfb1e749e9a5d6c317b2e50056e969ba7417a88ebb622f6297384ace55",
+      "title": "Physical interpretation of projected bands",
+      "total_lines": 33,
+      "sections": [
+        {
+          "heading": "# Physical interpretation of projected bands",
+          "start_line_1based": 1,
+          "offset": 0
+        },
+        {
+          "heading": "## Orbitals and projections",
+          "start_line_1based": 5,
+          "offset": 4
+        },
+        {
+          "heading": "## Valence",
+          "start_line_1based": 19,
+          "offset": 18
+        },
+        {
+          "heading": "## Conduction and freezing",
+          "start_line_1based": 27,
+          "offset": 26
+        }
+      ]
+    },
+    {
+      "path": "guides/mcp/docs/PLOTTING.md",
+      "source_repository_path": "wannier_mcp/workflow/docs/PLOTTING.md",
+      "sha256": "5eac310792084e81e301513aa3c6f79cbf78914036df0ee12dab73e9d59dd5cb",
+      "title": "Projection evidence figures",
+      "total_lines": 63,
+      "sections": [
+        {
+          "heading": "# Projection evidence figures",
+          "start_line_1based": 1,
+          "offset": 0
+        },
+        {
+          "heading": "## Outputs and interpretation",
+          "start_line_1based": 17,
+          "offset": 16
+        },
+        {
+          "heading": "## Geometry and segments",
+          "start_line_1based": 31,
+          "offset": 30
+        },
+        {
+          "heading": "## Path-projected spectrum is not DOS",
+          "start_line_1based": 51,
+          "offset": 50
+        },
+        {
+          "heading": "## Decision overlays and scope",
+          "start_line_1based": 59,
+          "offset": 58
+        }
+      ]
+    },
+    {
+      "path": "guides/mcp/docs/REFERENCE-TOOLS.md",
+      "source_repository_path": "wannier_mcp/workflow/docs/REFERENCE-TOOLS.md",
+      "sha256": "fb41dc0c7a0276fafa68b42570702b38f7faf1babfdce6a44984f0a74febed61",
+      "title": "Evidence tools and decision records",
+      "total_lines": 86,
+      "sections": [
+        {
+          "heading": "# Evidence tools and decision records",
+          "start_line_1based": 1,
+          "offset": 0
+        },
+        {
+          "heading": "## 1. Cache adapter",
+          "start_line_1based": 9,
+          "offset": 8
+        },
+        {
+          "heading": "## 2. Raw evidence and same-state competition",
+          "start_line_1based": 22,
+          "offset": 21
+        },
+        {
+          "heading": "## 3. Decision records",
+          "start_line_1based": 46,
+          "offset": 45
+        },
+        {
+          "heading": "## 4. Recalculation and validation",
+          "start_line_1based": 62,
+          "offset": 61
+        },
+        {
+          "heading": "## 5. Execution boundaries",
+          "start_line_1based": 76,
+          "offset": 75
+        }
+      ]
+    },
+    {
+      "path": "guides/mcp/docs/REFERENCE-WORKFLOW-V0.2.md",
+      "source_repository_path": "wannier_mcp/workflow/docs/REFERENCE-WORKFLOW-V0.2.md",
+      "sha256": "92f6b8bc5ce5e0ba18281b22c3c666886708e2ccb45fa177f252758fa50cad27",
+      "title": "Reference workflow integration",
+      "total_lines": 14,
+      "sections": [
+        {
+          "heading": "# Reference workflow integration",
+          "start_line_1based": 1,
+          "offset": 0
+        }
+      ]
+    },
+    {
+      "path": "guides/mcp/docs/RUNTIME.md",
+      "source_repository_path": "wannier_mcp/workflow/docs/RUNTIME.md",
+      "sha256": "4da88b1f0d1ed9270975880512948b187deaa8b1d3bc5067f9d60f6110b8ba28",
+      "title": "Compact, file-based operation",
+      "total_lines": 36,
+      "sections": [
+        {
+          "heading": "# Compact, file-based operation",
+          "start_line_1based": 1,
+          "offset": 0
+        },
+        {
+          "heading": "## Decision order",
+          "start_line_1based": 5,
+          "offset": 4
+        },
+        {
+          "heading": "## Compact returns and complete evidence",
+          "start_line_1based": 16,
+          "offset": 15
+        },
+        {
+          "heading": "## Draft edits and execution recovery",
+          "start_line_1based": 24,
+          "offset": 23
+        },
+        {
+          "heading": "## Optional evaluation accounting",
+          "start_line_1based": 30,
+          "offset": 29
+        }
+      ]
+    },
+    {
+      "path": "guides/mcp/docs/SELECTION-GALLERY.md",
+      "source_repository_path": "wannier_mcp/workflow/docs/SELECTION-GALLERY.md",
+      "sha256": "10840999129ff9a42808df53e54961269497e129916c7d215ebb01f4e463fc72",
+      "title": "Selection gallery and human review",
+      "total_lines": 33,
+      "sections": [
+        {
+          "heading": "# Selection gallery and human review",
+          "start_line_1based": 1,
+          "offset": 0
+        }
+      ]
+    },
+    {
+      "path": "guides/mcp/docs/SLURM-EXAMPLE.md",
+      "source_repository_path": "wannier_mcp/workflow/docs/SLURM-EXAMPLE.md",
+      "sha256": "64c0bda35c9a36da55125c68763b27d19b67b7bfc2f6832602875d37196cbbe6",
+      "title": "Optional Slurm reference workflow",
+      "total_lines": 44,
+      "sections": [
+        {
+          "heading": "# Optional Slurm reference workflow",
+          "start_line_1based": 1,
+          "offset": 0
+        },
+        {
+          "heading": "## Site and evidence",
+          "start_line_1based": 7,
+          "offset": 6
+        },
+        {
+          "heading": "## Reviewed trial",
+          "start_line_1based": 22,
+          "offset": 21
+        },
+        {
+          "heading": "## Resume and errors",
+          "start_line_1based": 38,
+          "offset": 37
+        }
+      ]
+    },
+    {
+      "path": "guides/mcp/docs/USER-EXPERIENCE-LIBRARY.md",
+      "source_repository_path": "wannier_mcp/workflow/docs/USER-EXPERIENCE-LIBRARY.md",
+      "sha256": "c7a2b5c6c5998ebe07eebd69633c0669e11ced0b756c377eb1b04fb73289b6a1",
+      "title": "User experience library",
+      "total_lines": 15,
+      "sections": [
+        {
+          "heading": "# User experience library",
+          "start_line_1based": 1,
+          "offset": 0
+        },
+        {
+          "heading": "## Purpose and organization",
+          "start_line_1based": 5,
+          "offset": 4
+        },
+        {
+          "heading": "## Preliminary observations",
+          "start_line_1based": 9,
+          "offset": 8
+        },
+        {
+          "heading": "## Details to be added",
+          "start_line_1based": 13,
+          "offset": 12
+        }
+      ]
+    },
+    {
+      "path": "guides/mcp/docs/VASP-CACHE.md",
+      "source_repository_path": "wannier_mcp/workflow/docs/VASP-CACHE.md",
+      "sha256": "f7d0312b6bd95e4b5be85740de9305d4a6020ce737c02ab61e6cc528ac9fa5e0",
+      "title": "VASP output to evidence cache",
+      "total_lines": 78,
+      "sections": [
+        {
+          "heading": "# VASP output to evidence cache",
+          "start_line_1based": 1,
+          "offset": 0
+        },
+        {
+          "heading": "## Projected band path",
+          "start_line_1based": 5,
+          "offset": 4
+        },
+        {
+          "heading": "## Optional existing uniform-grid cache",
+          "start_line_1based": 23,
+          "offset": 22
+        },
+        {
+          "heading": "## Energy reference",
+          "start_line_1based": 39,
+          "offset": 38
+        },
+        {
+          "heading": "## Cache contract",
+          "start_line_1based": 58,
+          "offset": 57
+        }
+      ]
+    },
+    {
+      "path": "guides/mcp/docs/WANNIER-COMPARISON.md",
+      "source_repository_path": "wannier_mcp/workflow/docs/WANNIER-COMPARISON.md",
+      "sha256": "03e1b18ff4391fe8722cd3e481628c788f00556fda601d5fa3ccb084f72a36a7",
+      "title": "Fit comparison for each trial",
+      "total_lines": 25,
+      "sections": [
+        {
+          "heading": "# Fit comparison for each trial",
+          "start_line_1based": 1,
+          "offset": 0
+        }
+      ]
+    },
+    {
+      "path": "guides/mcp/docs/WANNIER-EXECUTION.md",
+      "source_repository_path": "wannier_mcp/workflow/docs/WANNIER-EXECUTION.md",
+      "sha256": "5fc2992684f9f262bd18610b8f496f115e7229b1f466eaa68f6d1d3619db1594",
+      "title": "Independent Wannier90 disentanglement execution",
+      "total_lines": 105,
+      "sections": [
+        {
+          "heading": "# Independent Wannier90 disentanglement execution",
+          "start_line_1based": 1,
+          "offset": 0
+        },
+        {
+          "heading": "## Preparation",
+          "start_line_1based": 7,
+          "offset": 6
+        },
+        {
+          "heading": "## Submission and execution",
+          "start_line_1based": 25,
+          "offset": 24
+        },
+        {
+          "heading": "## Status, accounting, and inspection",
+          "start_line_1based": 48,
+          "offset": 47
+        },
+        {
+          "heading": "## Technical product recovery after wall-time interruption",
+          "start_line_1based": 73,
+          "offset": 72
+        },
+        {
+          "heading": "## Matrix reuse for window-only retries",
+          "start_line_1based": 94,
+          "offset": 93
+        }
+      ]
+    },
+    {
+      "path": "guides/mcp/docs/WANNIER-INTERFACE.md",
+      "source_repository_path": "wannier_mcp/workflow/docs/WANNIER-INTERFACE.md",
+      "sha256": "3df21596a799b227327b05d6c2363fa2dcf24cda6fb1138fd4086003e800f00b",
+      "title": "From projected bands to the VASP/Wannier90 interface",
+      "total_lines": 149,
+      "sections": [
+        {
+          "heading": "# From projected bands to the VASP/Wannier90 interface",
+          "start_line_1based": 1,
+          "offset": 0
+        },
+        {
+          "heading": "## Default entry",
+          "start_line_1based": 9,
+          "offset": 8
+        },
+        {
+          "heading": "## Sealed shared-WAVECAR route",
+          "start_line_1based": 29,
+          "offset": 28
+        },
+        {
+          "heading": "## Preparation and interface execution",
+          "start_line_1based": 71,
+          "offset": 70
+        },
+        {
+          "heading": "## Post-interface gates and Wannier execution",
+          "start_line_1based": 116,
+          "offset": 115
+        },
+        {
+          "heading": "## Reviewed occupied-prefix exclusions",
+          "start_line_1based": 145,
+          "offset": 144
+        }
+      ]
+    },
+    {
+      "path": "guides/mcp/docs/WINDOW-RETRIES.md",
+      "source_repository_path": "wannier_mcp/workflow/docs/WINDOW-RETRIES.md",
+      "sha256": "c8cb32d25283894667ddbb9c2a9fa901cfff2dd5cb5af259d29a4c2d0535a62f",
+      "title": "Window retry card",
+      "total_lines": 30,
+      "sections": [
+        {
+          "heading": "# Window retry card",
+          "start_line_1based": 1,
+          "offset": 0
+        },
+        {
+          "heading": "## Choose and execute the next experiment",
+          "start_line_1based": 5,
+          "offset": 4
+        },
+        {
+          "heading": "### Test an uncertain additional basis channel",
+          "start_line_1based": 18,
+          "offset": 17
+        },
+        {
+          "heading": "## Scope of the negative screen",
+          "start_line_1based": 28,
+          "offset": 27
+        }
+      ]
+    },
+    {
+      "path": "guides/mcp/docs/WORKFLOW-DECISIONS.md",
+      "source_repository_path": "wannier_mcp/workflow/docs/WORKFLOW-DECISIONS.md",
+      "sha256": "9408e16cd222d2434228650ecbe454b2ec2a0b1f9b22f1b346fe080b72cbad8c",
+      "title": "Orbital manifolds and windows: canonical decision sequence",
+      "total_lines": 48,
+      "sections": [
+        {
+          "heading": "# Orbital manifolds and windows: canonical decision sequence",
+          "start_line_1based": 1,
+          "offset": 0
+        },
+        {
+          "heading": "## Inputs and objectives",
+          "start_line_1based": 5,
+          "offset": 4
+        },
+        {
+          "heading": "## Criterion priority",
+          "start_line_1based": 24,
+          "offset": 23
+        },
+        {
+          "heading": "## Valence lower-edge procedure",
+          "start_line_1based": 31,
+          "offset": 30
+        },
+        {
+          "heading": "## Conduction upper-edge procedure",
+          "start_line_1based": 39,
+          "offset": 38
+        },
+        {
+          "heading": "## Evidence retained for every decision",
+          "start_line_1based": 46,
+          "offset": 45
+        }
+      ]
+    }
+  ]
+}

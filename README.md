@@ -8,7 +8,7 @@
 **让 AI 全自动选取基组、判断窗口，构造、检查并逐步改进 Wannier TB 哈密顿量。**
 *Automate basis and window selection with AI to construct, check, and iteratively improve Wannier TB Hamiltonians.*
 
-[极简使用](#极简使用) · [Cu 示例](#cu-example) · [快速开始](#快速开始) · [测试与成本](#测试效果与成本对比) · [文档导航](#文档导航) · [后续计划](#后续计划) · [使用建议](#已知问题与使用建议)
+[项目介绍](#项目介绍) · [快速上手](docs/QUICKSTART.md) · [Cu 示例](#cu-example) · [测试与成本](#测试效果与成本对比) · [文档导航](#文档导航) · [后续计划](#后续计划) · [使用建议](#已知问题与使用建议)
 
 ![Version](https://img.shields.io/badge/version-0.1.0-blue)
 ![Interfaces](https://img.shields.io/badge/interfaces-MCP%20%7C%20Skill%20%7C%20CLI-6875d9)
@@ -16,7 +16,22 @@
 
 <br clear="right" />
 
-## 简介 · Introduction
+## 选择使用方式
+
+| 版本 | 介绍 | 上手入口 |
+|---|---|---|
+| WannierCompass | 通过 MCP、Skill 或 CLI 分析投影、选择基组与窗口，完成构造和迭代。 | [快速上手](docs/QUICKSTART.md) |
+| 小模型工作流 | 面向本地小模型(Qwen 3.5-122b @ 4x RTX 4090)，细分角色、采用结构化方案与交接。 | [快速上手](extensions/small-model/QUICKSTART.md) |
+
+<a id="最新进展"></a>
+
+**最新进展**
+
+<sub>2026-10-28 · v0.1.0 / 小模型 v0.2.0.dev11：新增独立快速上手文档和小模型工作流目录。<br>
+2026-10-22 · v0.1.0：新增批量材料测试、拟合图与成本对照。<br>
+<a href="CHANGELOG.md">完整更新历史 →</a></sub>
+
+## 项目介绍
 
 **WannierCompass** 是面向 DFT → Wannier 构造的 AI 科学工作流工具（当前支持 VASP → Wannier90），用于构造 Wannier 紧束缚（TB）哈密顿量。它提供 MCP 服务、Skill 和命令行入口，帮助不同 AI 根据研究目标和当前 DFT 投影信息，自动选择构造 Wannier TB 哈密顿量所需的轨道基组、解纠缠窗口与 frozen 窗口，执行计算，并结合 DFT/Wannier 能带对照、轨道展宽（spread）等信息判断下一步如何改进。
 
@@ -84,61 +99,6 @@ flowchart LR
 ![Cu 示例：不同 AI 的首次选择与后续判断](docs/assets/cu-ai-workflow.zh-CN.png)
 
 *图中勾号表示不再进行下一轮计算；用户也可以根据所需精度和拟合范围，要求 AI 进一步调整。* [图示说明](docs/CU-WORKFLOW-ILLUSTRATION.md)
-
-## 快速开始
-
-### 1. 安装
-
-文件分析和绘图需要 Python 3.10+。实际计算还需要用户自行提供 VASP、Wannier90、合适的输入数据和执行环境。仓库不分发这些程序、POTCAR 或波函数文件。
-
-```bash
-git clone https://github.com/isinglch/wannier-compass.git
-cd wannier-compass
-python -m venv .venv
-source .venv/bin/activate
-pip install -e .
-```
-
-### 2. 选择入口
-
-**a. 以 Skill 和 tools 方式直接阅读和调用工具包。**
-
-完成上面的下载和安装后，让具备文件与命令操作能力的 Agent 阅读 [SKILL.md](SKILL.md) 和[全带 Wannier 概览](wannier_mcp/workflow/docs/CONSTRUCTION-OVERVIEW.md)，再按[首次尝试卡](wannier_mcp/workflow/docs/FIRST-TRIAL-CARD.md)选择基组与窗口、调用工具并检查结果。这是目前真实材料测试主要采用的方式，无需先配置 MCP。
-
-例如，可以这样明确要求启动计算和后续重试：
-
-> 请使用指定路径下的 WannierCompass 工具包，为这个材料构造 Wannier TB 哈密顿量。先阅读 Skill 和 construction overview，再按首次尝试卡使用当前输入。复用已有 DFT 数据；需要补充计算时，使用我提供的 VASP 参数与程序路径。我授权你在指定工作区和资源范围内实际启动计算。每轮保存选择图，检查 DFT/Wannier 能带对照、收敛与轨道 spread；满足研究目标时停止，不满足时按重试指导继续，最多进行三轮尝试（含首次）。
-
-请向 Agent 提供材料输入、拟合目的、执行环境和资源限制，并明确是否授权计算及最多尝试多少轮。文件／CLI 方式的执行命令见[运行卡](wannier_mcp/workflow/docs/RUNTIME.md)。
-
-**b. MCP（可选）：连接支持 MCP 的 AI Agent。**
-
-MCP 已有接口与运行测试，完全独立客户端中的广泛计算测试仍待完善。配置服务后，先调用 `workflow_guide`，按返回路径读取 Skill、construction overview 和执行说明。
-
-```json
-{
-  "mcpServers": {
-    "wannier-compass": {
-      "command": "/absolute/path/to/.venv/bin/wannier-compass",
-      "env": {
-        "WAN_WORKSPACE_ROOT": "/absolute/path/to/authorized-workspace"
-      }
-    }
-  }
-}
-```
-
-MCP 提交入口默认只预览。授权实际计算后，还需在 MCP 服务环境中设置 `WAN_ALLOW_SUBMIT=1`，并在提交调用中显式指定 `execute=true`。
-
-**c. 直接调用 CLI 使用。**
-
-阅读[运行卡](wannier_mcp/workflow/docs/RUNTIME.md)与[输入输出接口](wannier_mcp/workflow/docs/INTERFACES.md)，按文件接口准备输入并调用命令。
-
-### 3. 从已有 DFT 计算开始
-
-已有匹配的 SCF、投影能带和波函数时，可以复用这些素材，或补全缺少的计算；新基组仍需运行 VASP–Wannier90 非自洽（NSCF）接口步骤，生成对应的投影矩阵等文件。相关输入要求见 [DFT 准备说明](wannier_mcp/workflow/docs/DFT-PREPARATION.md)；工具入口见[参考工具](wannier_mcp/workflow/docs/REFERENCE-TOOLS.md)。
-
-证据分析与科学输入输出接口不要求 SSH 或 Slurm。目前随包提供的全流程执行集成是可选的 [Slurm 参考适配器](wannier_mcp/workflow/docs/SLURM-EXAMPLE.md)；其他执行环境（如 PBS）需要相应的简单适配。
 
 ## 测试效果与成本对比
 

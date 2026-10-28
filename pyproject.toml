@@ -34,3 +34,6 @@ wannier_mcp = [
   "workflow/policies/*.json",
   "workflow/sites/*.json",
 ]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

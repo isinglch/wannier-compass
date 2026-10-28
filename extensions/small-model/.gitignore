@@ -1,0 +1,15 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+.ruff_cache/
+build/
+dist/
+runs/
+*.local.json
+.env
+/local-tests/
+# Local model credentials and secrets
+*.key
+.env.*
+!.env.example
