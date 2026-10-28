@@ -1,0 +1,168 @@
+{
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "model-plan-v1"
+    },
+    "objective": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
+    "input_revision": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "basis": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "pattern": "\\S"
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "num_wann": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "target_band_ranges_1based": {
+      "type": "array",
+      "items": {
+        "type": "array",
+        "items": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "minItems": 2,
+        "maxItems": 2
+      },
+      "minItems": 1
+    },
+    "excluded_bands_1based": {
+      "type": "array",
+      "items": {
+        "type": "integer",
+        "minimum": 1
+      },
+      "uniqueItems": true
+    },
+    "windows_relative_eV": {
+      "type": "object",
+      "properties": {
+        "dis_eV": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "frozen_eV": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "minItems": 2,
+          "maxItems": 2
+        }
+      },
+      "required": [
+        "dis_eV",
+        "frozen_eV"
+      ],
+      "additionalProperties": false
+    },
+    "solver": {
+      "type": "object",
+      "properties": {
+        "num_iter": {
+          "type": "integer",
+          "const": 0
+        },
+        "dis_num_iter": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "dis_conv_tol": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "dis_conv_window": {
+          "type": "integer",
+          "minimum": 1
+        }
+      },
+      "required": [
+        "num_iter",
+        "dis_num_iter",
+        "dis_conv_tol",
+        "dis_conv_window"
+      ],
+      "additionalProperties": false
+    },
+    "reason": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
+    "evidence_refs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "path": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          },
+          "k_band_1based": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "minItems": 2,
+            "maxItems": 2
+          },
+          "energy_relative_eV": {
+            "type": "number"
+          },
+          "channel": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "raw_projection": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "path",
+          "sha256"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 1
+    }
+  },
+  "required": [
+    "schema_version",
+    "objective",
+    "input_revision",
+    "basis",
+    "num_wann",
+    "target_band_ranges_1based",
+    "excluded_bands_1based",
+    "windows_relative_eV",
+    "solver",
+    "reason",
+    "evidence_refs"
+  ],
+  "additionalProperties": false
+}

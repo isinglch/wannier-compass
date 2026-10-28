@@ -7,7 +7,7 @@
 **Automate basis and window selection with AI to construct, check, and iteratively improve Wannier TB Hamiltonians.**
 
 
-[One-line use](#one-line-use) · [Cu example](#cu-example) · [Quick start](#quick-start) · [Tests and cost](#test-results-and-cost-comparison) · [Documentation](#documentation) · [Roadmap](#roadmap) · [Usage advice](#known-issues-and-usage-recommendations)
+[Project overview](#project-overview) · [Quick start](docs/QUICKSTART.en.md) · [Cu example](#cu-example) · [Tests and cost](#test-results-and-cost-comparison) · [Documentation](#documentation) · [Roadmap](#roadmap) · [Usage advice](#known-issues-and-usage-recommendations)
 
 ![Version](https://img.shields.io/badge/version-0.1.0-blue)
 ![Interfaces](https://img.shields.io/badge/interfaces-MCP%20%7C%20Skill%20%7C%20CLI-6875d9)
@@ -15,7 +15,22 @@
 
 <br clear="right" />
 
-## Introduction
+## Choose a workflow
+
+| Version | Description | Get started |
+|---|---|---|
+| WannierCompass | Use MCP, a skill or the CLI to inspect projections, select a basis and windows, and construct and refine a Wannier Hamiltonian. | [Quick start](docs/QUICKSTART.en.md) |
+| Small-model workflow | For locally deployed models (Qwen 3.5-122b @ 4x RTX 4090), with specialized roles, structured plans and handoffs. | [Quick start](extensions/small-model/QUICKSTART.en.md) |
+
+<a id="latest-updates"></a>
+
+**Latest updates**
+
+<sub>2026-10-28 · v0.1.0 / small-model v0.2.0.dev11: add dedicated quick starts and an independent small-model workflow directory.<br>
+2026-10-22 · v0.1.0: add batch-material tests, band-fit figures and cost comparisons.<br>
+<a href="CHANGELOG.en.md">Full changelog →</a></sub>
+
+## Project overview
 
 **WannierCompass** is an AI scientific workflow tool for constructing Wannier tight-binding (TB) Hamiltonians from DFT calculations, currently supporting VASP → Wannier90. It provides an MCP server, skill and CLI to help different AI agents automatically select an orbital basis, disentanglement window and frozen window based on the research objective and current DFT projections, run calculations, and use DFT/Wannier band comparisons and orbital spreads to decide how to improve the TB Hamiltonian.
 
@@ -73,61 +88,6 @@ The figure illustrates how AI agents use WannierCompass to construct Wannier TB 
 ![Cu example: initial proposals and follow-up decisions by different AI agents](docs/assets/cu-ai-workflow.en.png)
 
 *Check marks indicate that no further calculation round was performed. Users can request further adjustments based on the accuracy and fitting range they need.* [About the illustration](docs/CU-WORKFLOW-ILLUSTRATION.en.md)
-
-## Quick start
-
-### 1. Install
-
-File analysis and plotting require Python 3.10+. Actual calculations additionally require user-provided VASP, Wannier90, suitable inputs and an execution environment. These programs, POTCAR and wavefunction files are not distributed with the repository.
-
-```bash
-git clone https://github.com/isinglch/wannier-compass.git
-cd wannier-compass
-python -m venv .venv
-source .venv/bin/activate
-pip install -e .
-```
-
-### 2. Choose an entry point
-
-**a. Read and invoke the toolkit directly through its skill and tools.**
-
-After downloading and installing the toolkit above, ask an agent with file and command access to read [SKILL.md](SKILL.md) and the [construction overview](wannier_mcp/workflow/docs/CONSTRUCTION-OVERVIEW.md), then follow the [first-trial card](wannier_mcp/workflow/docs/FIRST-TRIAL-CARD.md) to choose the basis and windows, invoke the tools and check the results. This is the main route used in the current real-material tests; MCP setup is optional.
-
-For example, explicitly authorize computation and set a retry budget:
-
-> Use WannierCompass at the specified path to construct a Wannier TB Hamiltonian for this material. Read the skill and construction overview, then follow the first-trial card using the current inputs. Reuse existing DFT data; use my VASP settings and executable paths when additional calculations are needed. I authorize you to run calculations within the specified workspace and resource limits. Save selection plots for each trial and inspect DFT/Wannier band comparisons, convergence and orbital spreads. Stop when the research objective is met; otherwise follow the retry guidance, with at most three trials including the first.
-
-Provide the material inputs, fitting objective, execution environment and resource limits, and specify whether computation is authorized and how many trials are allowed. See the [runtime card](wannier_mcp/workflow/docs/RUNTIME.md) for file/CLI execution commands.
-
-**b. Optional MCP: connect an MCP-capable AI agent.**
-
-MCP has interface and runtime tests; broad calculation testing through fully independent clients remains to be completed. Configure the server, call `workflow_guide`, then read the skill, construction overview and operational documents at the returned paths.
-
-```json
-{
-  "mcpServers": {
-    "wannier-compass": {
-      "command": "/absolute/path/to/.venv/bin/wannier-compass",
-      "env": {
-        "WAN_WORKSPACE_ROOT": "/absolute/path/to/authorized-workspace"
-      }
-    }
-  }
-}
-```
-
-MCP submission tools preview by default. Once computation is authorized, also set `WAN_ALLOW_SUBMIT=1` in the MCP server environment and explicitly pass `execute=true` in the submission call.
-
-**c. Use the CLI directly.**
-
-Read the [runtime card](wannier_mcp/workflow/docs/RUNTIME.md) and [interface contract](wannier_mcp/workflow/docs/INTERFACES.md), prepare the file inputs and invoke the commands.
-
-### 3. Start from existing DFT calculations
-
-Matched SCF, projected-band and wavefunction inputs can be reused, with any missing calculations completed as needed. A new basis still requires the VASP–Wannier90 non-self-consistent (NSCF) interface step to generate the corresponding projection matrices and related files. See the [DFT input requirements](wannier_mcp/workflow/docs/DFT-PREPARATION.md) and [reference tool entries](wannier_mcp/workflow/docs/REFERENCE-TOOLS.md).
-
-Evidence analysis and scientific input/output contracts do not require SSH or Slurm. The bundled end-to-end execution integration is an optional [Slurm reference adapter](wannier_mcp/workflow/docs/SLURM-EXAMPLE.md). Other execution environments, such as PBS, require a corresponding lightweight execution adaptation.
 
 ## Test results and cost comparison
 

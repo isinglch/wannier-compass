@@ -1,0 +1,266 @@
+{
+  "planner": {
+    "oneOf": [
+      {
+        "type": "object",
+        "properties": {
+          "action": {
+            "const": "submit"
+          },
+          "plan_id": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          }
+        },
+        "required": [
+          "action",
+          "plan_id"
+        ],
+        "additionalProperties": false
+      },
+      {
+        "type": "object",
+        "properties": {
+          "action": {
+            "const": "request_data"
+          },
+          "reason": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "request": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          }
+        },
+        "required": [
+          "action",
+          "reason",
+          "request"
+        ],
+        "additionalProperties": false
+      }
+    ]
+  },
+  "reviewer": {
+    "oneOf": [
+      {
+        "type": "object",
+        "properties": {
+          "action": {
+            "const": "approve"
+          },
+          "plan_id": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "reason": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          }
+        },
+        "required": [
+          "action",
+          "plan_id",
+          "reason"
+        ],
+        "additionalProperties": false
+      },
+      {
+        "type": "object",
+        "properties": {
+          "action": {
+            "const": "request_revision"
+          },
+          "plan_id": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "issues": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            },
+            "minItems": 1
+          },
+          "reason": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          }
+        },
+        "required": [
+          "action",
+          "plan_id",
+          "issues",
+          "reason"
+        ],
+        "additionalProperties": false
+      }
+    ]
+  },
+  "evaluator": {
+    "oneOf": [
+      {
+        "type": "object",
+        "properties": {
+          "action": {
+            "const": "complete"
+          },
+          "reason": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "observations": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            }
+          },
+          "termination_basis": {
+            "enum": [
+              "objective_satisfied",
+              "no_justified_trial",
+              "data_blocker"
+            ]
+          },
+          "remaining_work": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            }
+          }
+        },
+        "required": [
+          "action",
+          "reason",
+          "observations",
+          "termination_basis",
+          "remaining_work"
+        ],
+        "additionalProperties": false
+      },
+      {
+        "type": "object",
+        "properties": {
+          "action": {
+            "const": "iterate"
+          },
+          "reason": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "observations": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            }
+          },
+          "questions": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            },
+            "minItems": 1
+          }
+        },
+        "required": [
+          "action",
+          "reason",
+          "observations",
+          "questions"
+        ],
+        "additionalProperties": false
+      }
+    ]
+  },
+  "strategist": {
+    "oneOf": [
+      {
+        "type": "object",
+        "properties": {
+          "action": {
+            "const": "request_revision"
+          },
+          "reason": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "strategy": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "questions": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            }
+          }
+        },
+        "required": [
+          "action",
+          "reason",
+          "strategy",
+          "questions"
+        ],
+        "additionalProperties": false
+      },
+      {
+        "type": "object",
+        "properties": {
+          "action": {
+            "const": "stop"
+          },
+          "reason": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "termination_basis": {
+            "enum": [
+              "no_justified_trial",
+              "data_blocker"
+            ]
+          },
+          "remaining_work": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            }
+          }
+        },
+        "required": [
+          "action",
+          "reason",
+          "termination_basis",
+          "remaining_work"
+        ],
+        "additionalProperties": false
+      }
+    ]
+  }
+}

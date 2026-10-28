@@ -1,8 +1,8 @@
 {
   "format": "wannier-repository-distribution-manifest-v1",
   "version": "0.1.0",
-  "release_title": "First release",
-  "release_date": "2026-10-14",
+  "release_title": "Quick starts and isolated small-model workflow",
+  "release_date": "2026-10-28",
   "status": "research_preview",
   "english_execution_guidance_remains_canonical": true,
   "raw_material_data_included": false,
@@ -12,18 +12,28 @@
   "files": [
     {
       "path": ".gitignore",
-      "bytes": 1764,
-      "sha256": "4b563ec173639219976cbad74658b6833e27c6f06d2111369b75028843341520"
+      "bytes": 1981,
+      "sha256": "c672b2cc6d995c515127f992cb75476c060a6ffe6a659d1aed62659a97ee05d9"
+    },
+    {
+      "path": "CHANGELOG.en.md",
+      "bytes": 803,
+      "sha256": "3768216ee79ac4e09cfa86a2fea08e2fc3e90eb2160362c8192b362e682163ca"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "bytes": 715,
+      "sha256": "d32c866e92f0716fbdf966f41c05cbe06ee7a96f2cc9baa3a7cf95916ef39eff"
     },
     {
       "path": "README.en.md",
-      "bytes": 25971,
-      "sha256": "ca776e7b712b9207b2aa204856380b272820c76d971f3de1e9e33a44a4798b6b"
+      "bytes": 23080,
+      "sha256": "11f79941495c7697a8f5d527238c31f87acc99d1b283c3bbc6e193b620d1cc00"
     },
     {
       "path": "README.md",
-      "bytes": 25453,
-      "sha256": "f93003cd18520482b2eac74cba5db186d18113756fad1d97bf8854cdff02c3a9"
+      "bytes": 22896,
+      "sha256": "56f80f6fd5efc7e918074d45993aa08c42e8c528144c4cea8443a3656a319ab6"
     },
     {
       "path": "README.zh-CN.md",
@@ -171,6 +181,16 @@
       "sha256": "be5ab927defac2dfdb37cb7ebb66d0f81f962c0614a7084129cd223413ac01b7"
     },
     {
+      "path": "docs/QUICKSTART.en.md",
+      "bytes": 4221,
+      "sha256": "b1a3c3abd57729df221b7b77c6bd9dfefa87d81845e4cf817c7e4dd211c005b7"
+    },
+    {
+      "path": "docs/QUICKSTART.md",
+      "bytes": 3776,
+      "sha256": "79659001561901d568cd4f4b4f2cb291696adafe658b4e4133402417763e5585"
+    },
+    {
       "path": "docs/assets/cu-ai-workflow.en.png",
       "bytes": 875191,
       "sha256": "c3527a0d944bf7aefb595a3b49f4154b85f483153f5e9c1941d359dd0267e11c"
@@ -221,9 +241,639 @@
       "sha256": "baaa81ea876f7fce150a214e65d396bd3d8d0228c3cada04920adb70ae5bfa69"
     },
     {
+      "path": "extensions/small-model/.env.example",
+      "bytes": 81,
+      "sha256": "2aadc4b5dc445d959479d4d1c7cb0d2762efa7da0beb77605aa4cfba7bc1b455"
+    },
+    {
+      "path": "extensions/small-model/.gitignore",
+      "bytes": 171,
+      "sha256": "49db38d330edbfec638ac24d42a17c65542c7d051212b4cede494a5d10e9319c"
+    },
+    {
+      "path": "extensions/small-model/ARCHITECTURE.md",
+      "bytes": 11212,
+      "sha256": "1186bbbe6fa838bc3c6a2db5f1711a04290be4be5f4ed32c1cfbd50cdf593532"
+    },
+    {
+      "path": "extensions/small-model/MIGRATION.md",
+      "bytes": 2846,
+      "sha256": "671320a34328bccc3f46a5483bdab7a284e3c1b6403a600ba6f878e29a66c881"
+    },
+    {
+      "path": "extensions/small-model/QUICKSTART.en.md",
+      "bytes": 4316,
+      "sha256": "23b5ba7e96df9a77d00fc7426fd72ca0e1e75203f65e3704e6d960666313997f"
+    },
+    {
+      "path": "extensions/small-model/QUICKSTART.md",
+      "bytes": 4082,
+      "sha256": "dcb6612174f8835744050d699da5cd48431bb4f2cb01681f2647d54679304a5a"
+    },
+    {
+      "path": "extensions/small-model/README.md",
+      "bytes": 111,
+      "sha256": "5425c3e55f446c4a58b285a7afb7d1ce9191c285e1a2b5120cd94f10485bcf78"
+    },
+    {
+      "path": "extensions/small-model/SCHEDULER.md",
+      "bytes": 758,
+      "sha256": "0475b2c3d01cfc7a3e3e33203a058039bb1db60d09b3a1bd427be5c0bca68da5"
+    },
+    {
+      "path": "extensions/small-model/SOURCE.md",
+      "bytes": 754,
+      "sha256": "fe3dcd66e7894d3fba74e8e6bb7426aa6b76f4ae632ddab3f9cb05ea6c82f0d3"
+    },
+    {
+      "path": "extensions/small-model/USAGE.zh-CN.md",
+      "bytes": 14002,
+      "sha256": "995e4986b9e95280ae3668cbc4043bf54d08c4aac8948345467a002f533ec7ae"
+    },
+    {
+      "path": "extensions/small-model/agent",
+      "bytes": 372,
+      "sha256": "c0451bffbff431f55765b50aff1519c5e0ae45cdf4b7f320d7ff77278eaf6a9b"
+    },
+    {
+      "path": "extensions/small-model/agent.json",
+      "bytes": 1940,
+      "sha256": "0d1db6b21d2a07fd27a4c5ebdf6d761a2b614be964c00ac1e704af1db75f4209"
+    },
+    {
+      "path": "extensions/small-model/configs/README.md",
+      "bytes": 130,
+      "sha256": "c24201d03d5af2c16959b7b6937a43c9d5f558e513f2ff56234069d0fdfe0864"
+    },
+    {
+      "path": "extensions/small-model/docs/ACTUAL-INTERFACE-BANDS.md",
+      "bytes": 2492,
+      "sha256": "efc7a6685722212c102be18ea3175ea2b58beac56db280d900615974d323e7da"
+    },
+    {
+      "path": "extensions/small-model/docs/FACT-TOOLS.md",
+      "bytes": 5202,
+      "sha256": "fb949b603b30795b9c1537be555e54396495c9f7cd2ccbab834fb7ab2631da68"
+    },
+    {
+      "path": "extensions/small-model/docs/LENGTH-RECOVERY.md",
+      "bytes": 4619,
+      "sha256": "ead98944d8edc8ce955d80fe8ee9a9b45c933260be4009ced3a0fa45cfafb4c1"
+    },
+    {
+      "path": "extensions/small-model/docs/RETIRED-SCIENTIFIC-GUIDANCE-v0.1.0.md",
+      "bytes": 5595,
+      "sha256": "05147f2323ca5f38542fa5e22baff25f6c16454bd77db0fa169596e9cb2c62f3"
+    },
+    {
+      "path": "extensions/small-model/docs/STARTUP.md",
+      "bytes": 243,
+      "sha256": "0f0e46fd4f57ee41528bf873099a9b91193667f194d92a5d649014d0c7a9972f"
+    },
+    {
+      "path": "extensions/small-model/docs/STATISTICS-AND-EXECUTION-FACTS.md",
+      "bytes": 3410,
+      "sha256": "ce34d322bb452cae393a8886746a5b412f26be5b26667cadace315f5dc7b8082"
+    },
+    {
+      "path": "extensions/small-model/docs/STREAM-VIEWER.md",
+      "bytes": 6220,
+      "sha256": "69bda0ea8791d412dfc4aa09a4ac5cf35699086ae33a353bbe418a59e1a2ab0b"
+    },
+    {
+      "path": "extensions/small-model/docs/VASP-REPAIR-PLAN.md",
+      "bytes": 6132,
+      "sha256": "6f6a984b04b1198a32f21b42d442d4f8d6f9bc68609a34594d7281161e568264"
+    },
+    {
+      "path": "extensions/small-model/docs/assets/band-comparison.png",
+      "bytes": 683081,
+      "sha256": "9b0434c12c046825cbfadafb40c892be6630bc5047c817020741c40d93967497"
+    },
+    {
+      "path": "extensions/small-model/examples/replay_cu.py",
+      "bytes": 5466,
+      "sha256": "8dd5684453e89704bb0e88ae4959ab167be1f43b5177e1451285593578fb94a9"
+    },
+    {
+      "path": "extensions/small-model/examples/replay_native_plot_data.py",
+      "bytes": 4252,
+      "sha256": "018117c68086776852e6d11c5ec11315ff0274f2b1bbe7996c2f00bdce6b6bac"
+    },
+    {
+      "path": "extensions/small-model/examples/replay_scheduler_failures.py",
+      "bytes": 11384,
+      "sha256": "ecf13f401cbcfaadcaade61fc207ed1b7637250d0248dc92a72a3db29ef65b26"
+    },
+    {
+      "path": "extensions/small-model/pyproject.toml",
+      "bytes": 741,
+      "sha256": "a0f85bb3f81bc173877ab0045efd589dca2820b34db379e099b9b4b39569a93a"
+    },
+    {
+      "path": "extensions/small-model/schemas/actions.schema.json",
+      "bytes": 5782,
+      "sha256": "5a9670c0216636ed9fe621cbbe7839688ff8facd4f5fb9bb967ddf5137877d9a"
+    },
+    {
+      "path": "extensions/small-model/schemas/plan.schema.json",
+      "bytes": 3468,
+      "sha256": "4ba6de81082ff1983806b2bef02d8fac0a49ea8926e65dc20f9312e7b113062f"
+    },
+    {
+      "path": "extensions/small-model/schemas/scheduler-enabled-actions.schema.json",
+      "bytes": 7902,
+      "sha256": "205e1c7b3370bd14c8678ecdfcab08b6af8b06be5f2d7ecfa89df6e3ef443be9"
+    },
+    {
+      "path": "extensions/small-model/schemas/scheduler.schema.json",
+      "bytes": 2758,
+      "sha256": "48d121425f6b04fecda6ae17e742feadd5affec68b7cf9b20cdd9059725f73fc"
+    },
+    {
+      "path": "extensions/small-model/src/pythonagent/__init__.py",
+      "bytes": 84,
+      "sha256": "c0c0a2663f8185a983499b17e79dcd61fd49a0d9eb5b67a9e49240d49bb4bbc7"
+    },
+    {
+      "path": "extensions/small-model/src/pythonagent/__main__.py",
+      "bytes": 52,
+      "sha256": "b8778161a74a3dbbdae23fad45f08ef20ecf5e218b195d603ddf7def22035bd9"
+    },
+    {
+      "path": "extensions/small-model/src/pythonagent/artifacts.py",
+      "bytes": 2591,
+      "sha256": "4d503e4f9e636f57d2980cce68cbe835d427c2115a32a909913042bdb5eac692"
+    },
+    {
+      "path": "extensions/small-model/src/pythonagent/band_analysis.py",
+      "bytes": 6930,
+      "sha256": "16398abe9bd701b59123ee79b0b6fd0787fbd711eb3a98d641971eac5f8b6fa9"
+    },
+    {
+      "path": "extensions/small-model/src/pythonagent/cache.py",
+      "bytes": 25982,
+      "sha256": "184e91fed3c83df2f7e9bef11c3d4effd46e4110cd7c42a864450197888fca6a"
+    },
+    {
+      "path": "extensions/small-model/src/pythonagent/channels.py",
+      "bytes": 2402,
+      "sha256": "fbec3974972d66c6d5a1e60947fcddba8d77c6fb324d39808ed7c4ae4cbf21f7"
+    },
+    {
+      "path": "extensions/small-model/src/pythonagent/cli.py",
+      "bytes": 9734,
+      "sha256": "7098ac13cac993a16a3b2fa1e4a18d5be77f448c6ce20fadb5df30129477cb70"
+    },
+    {
+      "path": "extensions/small-model/src/pythonagent/compaction.py",
+      "bytes": 16229,
+      "sha256": "ce69f9654f71b8124829eb912da27498d291d6cbdd7db2fdba54d02a80ed6958"
+    },
+    {
+      "path": "extensions/small-model/src/pythonagent/config.py",
+      "bytes": 5294,
+      "sha256": "75cd05bc9064d2beec3f3d0b6624bef31cacaf7420855e9842fa4bcedfd1ef4e"
+    },
+    {
+      "path": "extensions/small-model/src/pythonagent/contracts.py",
+      "bytes": 6819,
+      "sha256": "1e3874f2a7be6114fbc0dc2a2a0e895c9d5e36cd18d0d1af99f6154835e9d16e"
+    },
+    {
+      "path": "extensions/small-model/src/pythonagent/evidence.py",
+      "bytes": 20537,
+      "sha256": "00eaaa8caab72b8f8f306b39a113e562ea338d4d691265514faba232c6afb105"
+    },
+    {
+      "path": "extensions/small-model/src/pythonagent/execution.py",
+      "bytes": 29249,
+      "sha256": "963357a67a5a434bea4cb5af63e3ccd480c1da703299d34af596313b601f14bf"
+    },
+    {
+      "path": "extensions/small-model/src/pythonagent/execution_facts.py",
+      "bytes": 12816,
+      "sha256": "23acb624032f7bc982e613468c87a2fa19598a51f4612459e267ba6c3400c594"
+    },
+    {
+      "path": "extensions/small-model/src/pythonagent/formats.py",
+      "bytes": 9715,
+      "sha256": "e4f627070d88ebda8285dad780b0bc8a722565a47251de3f953f1bc3adb2425c"
+    },
+    {
+      "path": "extensions/small-model/src/pythonagent/guidance.py",
+      "bytes": 6406,
+      "sha256": "1a3b99f3de94e36c36ed121ea9d9dd0283395fa24e2f9e95c62eb0a861724f73"
+    },
+    {
+      "path": "extensions/small-model/src/pythonagent/guides/SOURCE-ADAPTATION.md",
+      "bytes": 9835,
+      "sha256": "2d0b09809d9ecca130d434d561a8a4f2b678b1cd93c3b8193fc9ed4d1cfba96e"
+    },
+    {
+      "path": "extensions/small-model/src/pythonagent/guides/evaluator.md",
+      "bytes": 1594,
+      "sha256": "551a03f803a9378e4d9658e44aa8f9947842e5c1dd63c10c7eb55774aeefbd82"
+    },
+    {
+      "path": "extensions/small-model/src/pythonagent/guides/mcp-sources.json",
+      "bytes": 26300,
+      "sha256": "e4e1243dfa291fb0a36486ba80a01ced8a4dc0223872b02786d5beb46b81f788"
+    },
+    {
+      "path": "extensions/small-model/src/pythonagent/guides/mcp/ROOT-SKILL.md",
+      "bytes": 3438,
+      "sha256": "6d1630fbcd8e41b6b04079d997d209f109ed44c8a42429218ae0838a8bffb9a0"
+    },
+    {
+      "path": "extensions/small-model/src/pythonagent/guides/mcp/SKILL.md",
+      "bytes": 7873,
+      "sha256": "f02721cbd7f727136198925e5a471fb8c73955defafc87bc4a5baf3b0dc24f9e"
+    },
+    {
+      "path": "extensions/small-model/src/pythonagent/guides/mcp/docs/CONSTRUCTION-OVERVIEW.md",
+      "bytes": 9976,
+      "sha256": "de69d33d805d3fc33e729cfd92941405744c893f8d6be4186081ebcf29bc3798"
+    },
+    {
+      "path": "extensions/small-model/src/pythonagent/guides/mcp/docs/DECISION-STAGES.md",
+      "bytes": 10884,
+      "sha256": "d012898a76280b435251d78a7facfaca58afaec656c4369e81b6e4d6195ee23e"
+    },
+    {
+      "path": "extensions/small-model/src/pythonagent/guides/mcp/docs/DFT-PLOTS.md",
+      "bytes": 2343,
+      "sha256": "3e8141e70777d978c85d3a1e0500c434305b9a372bdede6dd3fb7ebb67e73c90"
+    },
+    {
+      "path": "extensions/small-model/src/pythonagent/guides/mcp/docs/DFT-PREPARATION.md",
+      "bytes": 9571,
+      "sha256": "4514b9e45ee51d513bfd89137c915407de0f89a5109e22348203c552b8580049"
+    },
+    {
+      "path": "extensions/small-model/src/pythonagent/guides/mcp/docs/DOCUMENTATION.md",
+      "bytes": 4558,
+      "sha256": "5b3762f11f3970b00b5faaa2ddaf4557a9df684378cb1b8662a471d4a629aee7"
+    },
+    {
+      "path": "extensions/small-model/src/pythonagent/guides/mcp/docs/EVALUATION-AND-KNOWLEDGE.md",
+      "bytes": 6921,
+      "sha256": "758ca7c18f0ef7f2c61990bbde11f501d62c1221481c99ec39dd8abf84497506"
+    },
+    {
+      "path": "extensions/small-model/src/pythonagent/guides/mcp/docs/FIRST-TRIAL-CARD.md",
+      "bytes": 6464,
+      "sha256": "99496aca552a78a0ae79133637eee8dbf011ef0c831c57efecfb59d00fd5ec65"
+    },
+    {
+      "path": "extensions/small-model/src/pythonagent/guides/mcp/docs/FIT-PLOTTING.md",
+      "bytes": 4817,
+      "sha256": "3914f72aa3cb193df3433a0cbb459100ea1237fba481ea1ffa017ba4288e558f"
+    },
+    {
+      "path": "extensions/small-model/src/pythonagent/guides/mcp/docs/INDEPENDENT-REVIEW.md",
+      "bytes": 6745,
+      "sha256": "8b38441bdaa061a744479aae7e4b0cec5498fd9591c1a48002f7d499a99972db"
+    },
+    {
+      "path": "extensions/small-model/src/pythonagent/guides/mcp/docs/INTERFACES.md",
+      "bytes": 6568,
+      "sha256": "055d59e90982e362789a04135e3167a229bc8caa0d5c2882a2c122e05123832b"
+    },
+    {
+      "path": "extensions/small-model/src/pythonagent/guides/mcp/docs/MANIFOLD-SELECTION.md",
+      "bytes": 24327,
+      "sha256": "7d70ddd27ad895f67816ec69ad38ba0f4458a0882ce4447dc44522e9e42306a6"
+    },
+    {
+      "path": "extensions/small-model/src/pythonagent/guides/mcp/docs/MATERIAL-LAYOUT.md",
+      "bytes": 4152,
+      "sha256": "410a87f7b05c10d3f54c9f453ca84d6d36aa93c28d12edfe3cb1976626a66f89"
+    },
+    {
+      "path": "extensions/small-model/src/pythonagent/guides/mcp/docs/PHYSICAL-REASONING.md",
+      "bytes": 6772,
+      "sha256": "929ea2dfb1e749e9a5d6c317b2e50056e969ba7417a88ebb622f6297384ace55"
+    },
+    {
+      "path": "extensions/small-model/src/pythonagent/guides/mcp/docs/PLOTTING.md",
+      "bytes": 5200,
+      "sha256": "5eac310792084e81e301513aa3c6f79cbf78914036df0ee12dab73e9d59dd5cb"
+    },
+    {
+      "path": "extensions/small-model/src/pythonagent/guides/mcp/docs/REFERENCE-TOOLS.md",
+      "bytes": 8334,
+      "sha256": "fb41dc0c7a0276fafa68b42570702b38f7faf1babfdce6a44984f0a74febed61"
+    },
+    {
+      "path": "extensions/small-model/src/pythonagent/guides/mcp/docs/REFERENCE-WORKFLOW-V0.2.md",
+      "bytes": 1893,
+      "sha256": "92f6b8bc5ce5e0ba18281b22c3c666886708e2ccb45fa177f252758fa50cad27"
+    },
+    {
+      "path": "extensions/small-model/src/pythonagent/guides/mcp/docs/RUNTIME.md",
+      "bytes": 6710,
+      "sha256": "4da88b1f0d1ed9270975880512948b187deaa8b1d3bc5067f9d60f6110b8ba28"
+    },
+    {
+      "path": "extensions/small-model/src/pythonagent/guides/mcp/docs/SELECTION-GALLERY.md",
+      "bytes": 2230,
+      "sha256": "10840999129ff9a42808df53e54961269497e129916c7d215ebb01f4e463fc72"
+    },
+    {
+      "path": "extensions/small-model/src/pythonagent/guides/mcp/docs/SLURM-EXAMPLE.md",
+      "bytes": 4172,
+      "sha256": "64c0bda35c9a36da55125c68763b27d19b67b7bfc2f6832602875d37196cbbe6"
+    },
+    {
+      "path": "extensions/small-model/src/pythonagent/guides/mcp/docs/USER-EXPERIENCE-LIBRARY.md",
+      "bytes": 1044,
+      "sha256": "c7a2b5c6c5998ebe07eebd69633c0669e11ced0b756c377eb1b04fb73289b6a1"
+    },
+    {
+      "path": "extensions/small-model/src/pythonagent/guides/mcp/docs/VASP-CACHE.md",
+      "bytes": 6004,
+      "sha256": "f7d0312b6bd95e4b5be85740de9305d4a6020ce737c02ab61e6cc528ac9fa5e0"
+    },
+    {
+      "path": "extensions/small-model/src/pythonagent/guides/mcp/docs/WANNIER-COMPARISON.md",
+      "bytes": 3289,
+      "sha256": "03e1b18ff4391fe8722cd3e481628c788f00556fda601d5fa3ccb084f72a36a7"
+    },
+    {
+      "path": "extensions/small-model/src/pythonagent/guides/mcp/docs/WANNIER-EXECUTION.md",
+      "bytes": 10549,
+      "sha256": "5fc2992684f9f262bd18610b8f496f115e7229b1f466eaa68f6d1d3619db1594"
+    },
+    {
+      "path": "extensions/small-model/src/pythonagent/guides/mcp/docs/WANNIER-INTERFACE.md",
+      "bytes": 14136,
+      "sha256": "3df21596a799b227327b05d6c2363fa2dcf24cda6fb1138fd4086003e800f00b"
+    },
+    {
+      "path": "extensions/small-model/src/pythonagent/guides/mcp/docs/WINDOW-RETRIES.md",
+      "bytes": 6497,
+      "sha256": "c8cb32d25283894667ddbb9c2a9fa901cfff2dd5cb5af259d29a4c2d0535a62f"
+    },
+    {
+      "path": "extensions/small-model/src/pythonagent/guides/mcp/docs/WORKFLOW-DECISIONS.md",
+      "bytes": 13660,
+      "sha256": "9408e16cd222d2434228650ecbe454b2ec2a0b1f9b22f1b346fe080b72cbad8c"
+    },
+    {
+      "path": "extensions/small-model/src/pythonagent/guides/planner.md",
+      "bytes": 1388,
+      "sha256": "2c1884d74acfff83edfa10378ea7e770ace56765c6369467e160369223571213"
+    },
+    {
+      "path": "extensions/small-model/src/pythonagent/guides/reviewer.md",
+      "bytes": 1321,
+      "sha256": "eef6dea018e1da818e73feb5765cca586593177ab976202f61c59b676714e21b"
+    },
+    {
+      "path": "extensions/small-model/src/pythonagent/guides/strategist.md",
+      "bytes": 1194,
+      "sha256": "36f915d80e8de836d7313c627baf41ff950f8514621ea14bb88302ce9c522e99"
+    },
+    {
+      "path": "extensions/small-model/src/pythonagent/journal.py",
+      "bytes": 2567,
+      "sha256": "1ac1fbd00b338da36a799a78765686fccdfcea6bf809687a8764f5ede3cc7368"
+    },
+    {
+      "path": "extensions/small-model/src/pythonagent/live.py",
+      "bytes": 3242,
+      "sha256": "bce4f593ead396c407f33f0683dc5896b1dec2254aab1ea38738f19e38e22068"
+    },
+    {
+      "path": "extensions/small-model/src/pythonagent/llm.py",
+      "bytes": 22065,
+      "sha256": "1179b96ec68306c2200e81881c51f9aa7833331169073e2499262317c9a9b813"
+    },
+    {
+      "path": "extensions/small-model/src/pythonagent/observations.py",
+      "bytes": 2255,
+      "sha256": "ad9c1e6e2abb74766b431e85f18e4263f7228a57a56513931e63bd5b5400cedd"
+    },
+    {
+      "path": "extensions/small-model/src/pythonagent/output_recovery.py",
+      "bytes": 3491,
+      "sha256": "e5d78d2701a4fd89a2762a9927c2ae6f6efb913650c1e5f2af793b6b4b809d51"
+    },
+    {
+      "path": "extensions/small-model/src/pythonagent/plans.py",
+      "bytes": 4873,
+      "sha256": "8e7176997205a2fda21b2ef9416cf979d45280c2ea70449d07685ee36e904690"
+    },
+    {
+      "path": "extensions/small-model/src/pythonagent/plot_paths.py",
+      "bytes": 10154,
+      "sha256": "2d051c31e9f52d08fde92c4a1205f5f5254d424a9d5e2f83df5c572b06206828"
+    },
+    {
+      "path": "extensions/small-model/src/pythonagent/plotting.py",
+      "bytes": 26384,
+      "sha256": "1dc9eb289238d8a732805105f26be8499c6a06eafadfe34315c8dc4ec8b39cd8"
+    },
+    {
+      "path": "extensions/small-model/src/pythonagent/results.py",
+      "bytes": 3536,
+      "sha256": "cda0bc7ead96a4bbe81da87196bee24c8129699e1f2d690c11570661e94f3f41"
+    },
+    {
+      "path": "extensions/small-model/src/pythonagent/roles.py",
+      "bytes": 9808,
+      "sha256": "f47790b2afb423cecf2170e768ce414c76a1c65b985437ebe075612497f720f4"
+    },
+    {
+      "path": "extensions/small-model/src/pythonagent/scheduler.py",
+      "bytes": 17842,
+      "sha256": "592f9c839651c24fc8038765631bdb3ef155ff523fc26392eecf46d01e780d38"
+    },
+    {
+      "path": "extensions/small-model/src/pythonagent/sessions.py",
+      "bytes": 24207,
+      "sha256": "f672d10d443c8a81618bae7dbb47c2ed972dca4e77e9f446f13f79a672dab5d3"
+    },
+    {
+      "path": "extensions/small-model/src/pythonagent/settings.py",
+      "bytes": 2889,
+      "sha256": "ad5f456f95718a4d952677d95039acab650aec6d5aa3d71a186e76149ea99c13"
+    },
+    {
+      "path": "extensions/small-model/src/pythonagent/specs.py",
+      "bytes": 7293,
+      "sha256": "81e5eafe77915b5bea2de87e15690cf41a904ac40802a948b518a56afc22f167"
+    },
+    {
+      "path": "extensions/small-model/src/pythonagent/startup.py",
+      "bytes": 10206,
+      "sha256": "f12cafca9416effb64404bdb670e7623881b2990dfe2cd75449624e2d1b8e753"
+    },
+    {
+      "path": "extensions/small-model/src/pythonagent/state.py",
+      "bytes": 2158,
+      "sha256": "05c8188e46d62b74a5c18d99e536a1a9d4b886a030ad4f3ac29eab1997a3aba5"
+    },
+    {
+      "path": "extensions/small-model/src/pythonagent/statistics_only.py",
+      "bytes": 4825,
+      "sha256": "5ac4c40930270979a7d4426e7bca1551372168ec30e7aac4329ae09425bd3da8"
+    },
+    {
+      "path": "extensions/small-model/src/pythonagent/streaming.py",
+      "bytes": 5180,
+      "sha256": "f9dbc549c98bf7064eef5b6492f77a5fb9b8aaa334a893f706466bc0186dee82"
+    },
+    {
+      "path": "extensions/small-model/src/pythonagent/tool_audit.py",
+      "bytes": 3320,
+      "sha256": "f51a54824d43c73b615efefd5120d3e482c74b18d757e32bd8680a5e86488122"
+    },
+    {
+      "path": "extensions/small-model/src/pythonagent/tools.py",
+      "bytes": 7748,
+      "sha256": "e5911aad1ca5a120ca443231674369fae8862e0037057ba670934eb9a0e4000b"
+    },
+    {
+      "path": "extensions/small-model/src/pythonagent/trial_analysis.py",
+      "bytes": 8456,
+      "sha256": "fb5c4cd789e60ea44bcefe01704e7b256832f679ff49e4da1f98045d66db1ddf"
+    },
+    {
+      "path": "extensions/small-model/src/pythonagent/validation.py",
+      "bytes": 7317,
+      "sha256": "15feb7825d840251df3926ea0e01683c146d42f1eb8daa919bf8db7fa5d4201e"
+    },
+    {
+      "path": "extensions/small-model/src/pythonagent/viewer.py",
+      "bytes": 13298,
+      "sha256": "03501e0500f41d4bbdab0e318e00c75bd086af0c9d89e96fcdc9fe3e488db047"
+    },
+    {
+      "path": "extensions/small-model/src/pythonagent/viewer_plots.py",
+      "bytes": 7380,
+      "sha256": "4d43bf6f72c4d71bf844967fb018ce894971e91d405473b65342f42ba298eea5"
+    },
+    {
+      "path": "extensions/small-model/src/pythonagent/web/app.js",
+      "bytes": 14200,
+      "sha256": "758f84dbf29194f2d517896ad4d5da24916084afbaf961c1a8d8a8fdd63dbacf"
+    },
+    {
+      "path": "extensions/small-model/src/pythonagent/web/index.html",
+      "bytes": 2136,
+      "sha256": "bcf1b90bcad593ccdaa36e7adc4e14321d361e9925c0b156e241d06c4e002c9a"
+    },
+    {
+      "path": "extensions/small-model/src/pythonagent/web/style.css",
+      "bytes": 3906,
+      "sha256": "f54bca3e64a7f6c83e2d366bbf5f5d51a3b62ec93be80cc0253c1eae0516364d"
+    },
+    {
+      "path": "extensions/small-model/src/pythonagent/workflow.py",
+      "bytes": 24338,
+      "sha256": "b69be5427eab42538ba1ad94332d7c7dc39baa090893ece66591be81be582e28"
+    },
+    {
+      "path": "extensions/small-model/tests/support.py",
+      "bytes": 3869,
+      "sha256": "a88a041946be699729e10e3376f8f89ededaddaa62bbb9303d925780f55c88e2"
+    },
+    {
+      "path": "extensions/small-model/tests/test_analysis_tools.py",
+      "bytes": 13796,
+      "sha256": "ea75095731fb4a0c1f3b9493521b55951f6e4ba81f2fd9909c33226ecc7e60d9"
+    },
+    {
+      "path": "extensions/small-model/tests/test_binding.py",
+      "bytes": 2436,
+      "sha256": "66a5cef712d167b848832fbaf30c59d5791d95ad83abcaa1a2be04b0df2881a4"
+    },
+    {
+      "path": "extensions/small-model/tests/test_boundaries.py",
+      "bytes": 6927,
+      "sha256": "247e080aa282d8480a2f5ad686e988607f6915893a147d99e3c034b65f9e4034"
+    },
+    {
+      "path": "extensions/small-model/tests/test_cache.py",
+      "bytes": 4337,
+      "sha256": "8a5cd5f0d842ee6cd48498614e764e67feac849e19beedea9eaf4748aac073bb"
+    },
+    {
+      "path": "extensions/small-model/tests/test_execution_facts.py",
+      "bytes": 13529,
+      "sha256": "46d7d92ed5304dc9b5f39da82c6d809f8c4ba17ee8d15feb1c9def709126da2e"
+    },
+    {
+      "path": "extensions/small-model/tests/test_formats_execution.py",
+      "bytes": 4317,
+      "sha256": "1fbf4fa05bee78da60a791f111d00c2f28d6cf3b34dab109b09ffe713db7a071"
+    },
+    {
+      "path": "extensions/small-model/tests/test_guidance.py",
+      "bytes": 6201,
+      "sha256": "b533511a25376e1f0d6938a856fa911d3a92288684bf0cd556196fd0914bef14"
+    },
+    {
+      "path": "extensions/small-model/tests/test_native_band_counts.py",
+      "bytes": 9867,
+      "sha256": "0036762b7266a44dca492855de93f3c40848fcfa279ad44e67443b1b43709315"
+    },
+    {
+      "path": "extensions/small-model/tests/test_output_recovery.py",
+      "bytes": 16466,
+      "sha256": "80780fe745a237e34b7971a883bc1ffe29560f0066df24aef2d908ee3fd7177b"
+    },
+    {
+      "path": "extensions/small-model/tests/test_plotting.py",
+      "bytes": 12996,
+      "sha256": "163f4a4eef83f98806f63e8a9fe7d2dc12b34d72b1222c3dc896375e1eb7181b"
+    },
+    {
+      "path": "extensions/small-model/tests/test_prompt_fixes.py",
+      "bytes": 13892,
+      "sha256": "d2fadf8a52357b6da67817b7e840b69416fb8e78963828f74f098b6552f16eec"
+    },
+    {
+      "path": "extensions/small-model/tests/test_scheduler.py",
+      "bytes": 23435,
+      "sha256": "591c035b5881547cb43549fca4b4590576ffc5678bf4eb4b9aca95c47639d581"
+    },
+    {
+      "path": "extensions/small-model/tests/test_startup.py",
+      "bytes": 15393,
+      "sha256": "9c03a8c882b63a628a2a5556b347d686940e0b222c4a92774a5e6eb5669f21d7"
+    },
+    {
+      "path": "extensions/small-model/tests/test_statistics_only.py",
+      "bytes": 5304,
+      "sha256": "b728de6ebc4f9269d40f29aa020fd43959c7abe969e85d00b88e46b6223dcf18"
+    },
+    {
+      "path": "extensions/small-model/tests/test_stream_viewer.py",
+      "bytes": 23384,
+      "sha256": "6fa6688dac7d299a794bfb62da51ec83a8b654d51e418fb5605aba9f89899c4c"
+    },
+    {
+      "path": "extensions/small-model/tests/test_transport.py",
+      "bytes": 12610,
+      "sha256": "1db809a3794eef75de2ce609547ed44ad7fc900d078d3ecab9ebc59a36e06653"
+    },
+    {
+      "path": "extensions/small-model/tests/test_viewer_plots.py",
+      "bytes": 8595,
+      "sha256": "20a8f80d13681df9a6a2d51bba9c59438f9785b235cbec4b41410c03bfa0fedd"
+    },
+    {
+      "path": "extensions/small-model/tests/test_workflow.py",
+      "bytes": 10888,
+      "sha256": "1742299ee8149d9b5aa83bcac39cbd18792ebba351c693f550667d1826703de4"
+    },
+    {
       "path": "pyproject.toml",
-      "bytes": 830,
-      "sha256": "aa066b70843917ec02c74a0f9c8143fd8644b231dc219f2e29401c39b9c07e5f"
+      "bytes": 879,
+      "sha256": "66c3e305ee2ebc522523897d73a5f4a6aa70796004be29c14cad9cb4933361a3"
     },
     {
       "path": "tests/test_basis_scope.py",
@@ -730,5 +1380,13 @@
   "repository_presentation_revision": "2026-10-22",
   "derived_batch_benchmark_data_included": true,
   "release_id_algorithm": "sha256 of sorted-key compact UTF-8 JSON excluding release_id",
-  "release_id": "a157bf35bc175658f1bf86fd0e2652b9834d926dcbf262ec6511f15e7da1018b"
+  "independent_extensions": [
+    {
+      "path": "extensions/small-model",
+      "project": "pythonagent-scheduler",
+      "version": "0.2.0.dev11",
+      "source_commit": "d94d7a0d38b52ad2d366b140ad9fe11d455cc866"
+    }
+  ],
+  "release_id": "59d94467ddf74cd958e19a75c0bc0f94d9935c4cbdc97a7e23f15e2522ab00cb"
 }

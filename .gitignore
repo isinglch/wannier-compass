@@ -68,3 +68,9 @@ INCAR
 !/benchmarks/batch-material-tests/soc200/plots/eta2_histogram_0_30meV.png
 !/benchmarks/batch-material-tests/soc200/plots/spread_histograms.png
 !/benchmarks/batch-material-tests/soc200/results.csv
+
+# Reviewed small-model illustration and private runtime files.
+!extensions/small-model/docs/assets/band-comparison.png
+extensions/small-model/.env
+extensions/small-model/agent.local.json
+extensions/small-model/runs/

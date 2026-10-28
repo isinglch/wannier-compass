@@ -1,0 +1,11 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Agent 观察台</title><link rel="stylesheet" href="/style.css"><script defer src="/app.js"></script></head>
+<body><header><div><span class="eyebrow">PYTHONAGENT · LIVE</span><h1>Agent 观察台</h1></div><span id="connection" class="pill">正在连接</span></header>
+<main><section class="toolbar"><label>工作流 <select id="runs"><option value="">等待工作流启动</option></select></label><label>角色 <select id="role"><option value="">全部角色</option><option value="planner">方案规划员</option><option value="reviewer">方案审查员</option><option value="evaluator">结果评估员</option><option value="strategist">迭代策略员</option><option value="scheduler">全局调度员</option></select></label><button id="latest" class="manual-scroll" type="button">到最新记录 ↓</button></section>
+<section id="status" class="status" aria-live="polite">选择工作流，查看角色实际输出。生成中的文本尚未提交执行。</section>
+<section class="stats"><div>模型响应 <strong id="calls">0</strong></div><div>已报告 token <strong id="tokens">—</strong></div><div>工具调用 <strong id="tools">0</strong></div><div>计算尝试 <strong id="trials">0</strong></div></section>
+<section id="trial-results" class="trial-results" aria-label="每轮计算结果"><h2>每轮计算结果</h2><p class="gallery-hint">拟合图与残差图 · 点击查看原图或 PDF</p><p id="plots-status" class="gallery-hint" aria-live="polite">选择工作流后显示每轮结果。</p><div id="trial-gallery"></div></section>
+<div class="legend">逐字显示角色的 JSON 输出，可展开完整回答。角色交接保留原文；网页不向模型发送消息。</div>
+<section id="feed" aria-label="工作流消息"><div id="empty" class="empty">工作流启动后，消息会自动出现在这里。</div></section></main>
+<footer>本地只读 · 显示公开输出与执行事件 · 不展示系统提示词或独立推理字段</footer></body></html>
