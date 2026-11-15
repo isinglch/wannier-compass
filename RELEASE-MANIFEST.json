@@ -27,13 +27,13 @@
     },
     {
       "path": "README.en.md",
-      "bytes": 23080,
-      "sha256": "11f79941495c7697a8f5d527238c31f87acc99d1b283c3bbc6e193b620d1cc00"
+      "bytes": 23277,
+      "sha256": "667dac54986f9b15cace14ae9e128cce71754b9ffee3439dc02de933d88f5ed4"
     },
     {
       "path": "README.md",
-      "bytes": 22896,
-      "sha256": "56f80f6fd5efc7e918074d45993aa08c42e8c528144c4cea8443a3656a319ab6"
+      "bytes": 23074,
+      "sha256": "c439762cec799810c5eb450f7ace46157b59b014bccd893f903c2701df6117ae"
     },
     {
       "path": "README.zh-CN.md",
@@ -1237,8 +1237,8 @@
     },
     {
       "path": "wannier_mcp/workflow/tools/compare_wannier.py",
-      "bytes": 26390,
-      "sha256": "e7ab572e8bf11f1f2ba43745170ebf9f0bf387b4a92809f012cb44de43231308"
+      "bytes": 26452,
+      "sha256": "c30e790840c426abdc7a8eb21623a80e9f9acb41aed503a58c3fbe8ce0e580ef"
     },
     {
       "path": "wannier_mcp/workflow/tools/conduction_review.py",
@@ -1247,13 +1247,13 @@
     },
     {
       "path": "wannier_mcp/workflow/tools/decision_stages.py",
-      "bytes": 29284,
-      "sha256": "f57eb73c2997749713e608b62707376e2d3e7e3b04b750927dcec9d12d6428b4"
+      "bytes": 29339,
+      "sha256": "cd961b51ae1bc77872178706c35df661cb53941e53259db0fbc2c8fa2cf4470d"
     },
     {
       "path": "wannier_mcp/workflow/tools/dft_workflow.py",
-      "bytes": 53327,
-      "sha256": "42b944df95d9d090974967b6d4bbfdd873de522192be2c8fb0c32bcab0bce403"
+      "bytes": 53454,
+      "sha256": "956dc39baf8c1f07c3fd5b54121a78c3ade7efd3d475e72a86dcc9ce37da558a"
     },
     {
       "path": "wannier_mcp/workflow/tools/evidence_pipeline.py",
@@ -1272,8 +1272,13 @@
     },
     {
       "path": "wannier_mcp/workflow/tools/material_layout.py",
-      "bytes": 18360,
-      "sha256": "700d3c5ab0a83738858fb95d860021b786c5ddbadd13634441cc2f02776fa4b5"
+      "bytes": 18580,
+      "sha256": "b2c3e24454f0862ab2b936b0679707325a8470aec69470f7cc78fa6571ab5745"
+    },
+    {
+      "path": "wannier_mcp/workflow/tools/material_log.py",
+      "bytes": 16107,
+      "sha256": "bc2e49c73e72393fb92a20b1d615c4680956db9c909eb920b0a61c3014d1732d"
     },
     {
       "path": "wannier_mcp/workflow/tools/orbital_channels.py",
@@ -1302,8 +1307,8 @@
     },
     {
       "path": "wannier_mcp/workflow/tools/prepare_wannier_interface.py",
-      "bytes": 65060,
-      "sha256": "70de9bde92f5a5cec7c0ae4cca8967708fc2b06178c75afb25fb98d81d2fffaf"
+      "bytes": 66785,
+      "sha256": "52f5fe307ceaaed9914d2f7364df8c242b95f6ca7ec941b211d48905bfe386d9"
     },
     {
       "path": "wannier_mcp/workflow/tools/remote_command.py",
@@ -1362,8 +1367,8 @@
     },
     {
       "path": "wannier_mcp/workflow/tools/wannier_workflow.py",
-      "bytes": 62023,
-      "sha256": "73d6d3ec28911a5563490014eb4d024720c43f41eb6ee898640e8ea3abf0e377"
+      "bytes": 62289,
+      "sha256": "ca4248a4feb96afcafffc370643a9471033b95963736a3dadb76b1372a36c58c"
     },
     {
       "path": "wannier_mcp/workflow/tools/workflow_cli.py",
@@ -1376,7 +1381,7 @@
       "sha256": "806bcd5112130f57ed758874c38216b4368b8a5d94b1b7f308905a3a32438a05"
     }
   ],
-  "previous_repository_release_id": "e1e7ac6bbc824a3bb5c02ec489607b0e6f34f15014bf57e961224e0cb38a5339",
+  "previous_repository_release_id": "59d94467ddf74cd958e19a75c0bc0f94d9935c4cbdc97a7e23f15e2522ab00cb",
   "repository_presentation_revision": "2026-10-22",
   "derived_batch_benchmark_data_included": true,
   "release_id_algorithm": "sha256 of sorted-key compact UTF-8 JSON excluding release_id",
@@ -1388,5 +1393,5 @@
       "source_commit": "d94d7a0d38b52ad2d366b140ad9fe11d455cc866"
     }
   ],
-  "release_id": "59d94467ddf74cd958e19a75c0bc0f94d9935c4cbdc97a7e23f15e2522ab00cb"
+  "release_id": "b9d2f4b15a1dca523d7a9b4212876172d32e794f2bc248ceeb83bad2fcf8e50d"
 }

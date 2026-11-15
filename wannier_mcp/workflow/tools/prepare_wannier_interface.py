@@ -189,6 +189,32 @@ def read_poscar(path):
     return species, counts, lattice, cart
 
 
+
+# Fractional-coordinate tolerance for the half-cell risk check (not a spread threshold).
+GUIDING_CENTRES_HALF_TOL = 1e-4
+
+
+def half_cell_guiding_centres(scalars, trial_basis, species, counts, lattice, cart):
+    """Enable guiding centres only for projected atoms near fractional 0.5."""
+    projected_species = {row.split(':', 1)[0].strip() for row in trial_basis}
+    fractional = np.linalg.solve(np.asarray(lattice).T, np.asarray(cart).T).T % 1.0
+    hits = []
+    labels = [symbol for symbol, count in zip(species, counts) for _ in range(count)]
+    for index, (symbol, position) in enumerate(zip(labels, fractional), 1):
+        if symbol not in projected_species:
+            continue
+        for axis, value in zip('xyz', position):
+            if abs(value - 0.5) <= GUIDING_CENTRES_HALF_TOL:
+                hits.append(f'{symbol} atom {index} {axis}={value:.9g}')
+    if not hits:
+        return []
+    scalars['guiding_centres'] = 'true'
+    message = ('Projected centre near fractional 0.5: ' + '; '.join(hits)
+               + '. Enabled guiding_centres=true to avoid inconsistent spread branches.')
+    print('WARNING: ' + message, file=sys.stderr)
+    return [message]
+
+
 def wrapped(points):
     return np.round(np.mod(np.asarray(points, dtype=float), 1.0), 7) % 1.0
 
@@ -406,6 +432,8 @@ def prepare_band(band_dir, scf_dir, cache, analysis_path, decision_path, out_dir
     scalars = dict(num_wann=str(nw), num_bands=str(len(retained)), spinors='.true.' if mode == 'spinor' else '.false.',
                    mp_grid=' '.join(map(str, grid)), num_iter='0', dis_num_iter=str(dis_num_iter),
                    dis_conv_tol=str(DIS_TOL), dis_conv_window=str(DIS_WINDOW))
+    guiding_warnings = half_cell_guiding_centres(
+        scalars, decision['trial_basis'], species, counts, lattice, cart)
     if selection and selection['exclude_bands_1based']:
         scalars['exclude_bands'] = '1-'+str(len(selection['exclude_bands_1based']))
     native_plot = native_band_plot(band_dir)
@@ -478,8 +506,12 @@ def prepare_band(band_dir, scf_dir, cache, analysis_path, decision_path, out_dir
                            eigenval_sha256=shared['file_sha256']['EIGENVAL']) if shared else None,
         source_directories=dict(band=str(band_dir.resolve()), scf=str(scf_dir.resolve())),
         validation_scope='Projected-band basis/window proposal; actual interface k order, energies and mesh gate remain pending.')
+    if guiding_warnings:
+        manifest['warnings'] = guiding_warnings
     manifest['manifest_id'] = evidence.digest(manifest)
     (out_dir/'trial_manifest.json').write_text(json.dumps(manifest, indent=2, ensure_ascii=False, allow_nan=False)+'\n')
+    from material_log import refresh
+    refresh(out_dir)
     return manifest
 
 
@@ -546,6 +578,8 @@ def prepare(mesh_dir, scf_dir, cache, analysis_path, decision_path, out_dir, reu
                            mp_grid=' '.join(map(str, grid)),
                            num_iter='0', dis_num_iter=str(dis_num_iter),
                            dis_conv_tol=str(DIS_TOL), dis_conv_window=str(DIS_WINDOW))
+    guiding_warnings = half_cell_guiding_centres(
+        scalar_settings, decision['trial_basis'], species, counts, lattice, cart)
     scalar_settings.update(native_plot['scalars'])
     for names, values in ((('dis_win_min', 'dis_win_max'), windows['dis_eV']),
                           (('dis_froz_min', 'dis_froz_max'), windows['frozen_eV'])):
@@ -603,8 +637,12 @@ def prepare(mesh_dir, scf_dir, cache, analysis_path, decision_path, out_dir, reu
         input_hashes={name: sha(out_dir / name) for name in [*copy_sources, 'INCAR', 'wannier90.win']},
         source_directories=dict(mesh=str(mesh_dir.resolve()), scf=str(scf_dir.resolve()), band=str(band_dir.resolve())),
         validation_scope='Input identity, source electronic convergence evidence, declared same-spin semilocal protocol, full mesh and reviewed count gate. No new VASP interface or fit success claim.')
+    if guiding_warnings:
+        manifest['warnings'] = guiding_warnings
     manifest['manifest_id'] = evidence.digest(manifest)
     (out_dir / 'trial_manifest.json').write_text(json.dumps(manifest, indent=2, ensure_ascii=False, allow_nan=False) + '\n')
+    from material_log import refresh
+    refresh(out_dir)
     return manifest
 
 
@@ -863,7 +901,7 @@ def validate(trial_dir, outputs=False, eig_tolerance=1e-4, preflight_wavecar_sha
         if key == 'exclude_bands':
             from valence_selection import parse_exclude
             return parse_exclude(value)
-        if key == 'spinors' or key in NATIVE_OUTPUT_FLAGS: return boolean(value)
+        if key in ('spinors', 'guiding_centres') or key in NATIVE_OUTPUT_FLAGS: return boolean(value)
         if key in ('num_wann', 'num_bands', 'num_iter', 'dis_num_iter', 'bands_num_points'): return integer(value)
         if key == 'mp_grid': return tuple(map(int, value.split()))
         return float(value)

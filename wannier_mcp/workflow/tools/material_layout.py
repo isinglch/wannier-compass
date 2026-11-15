@@ -167,6 +167,8 @@ def register_fresh(case_dir):
     write_json(marker, dict(format=FORMAT, mode='fresh_dft', case_dir=str(case),
         created_utc=now(), dft_manifest='case.json'))
     write_readme(case/'README.md', case_readme(case))
+    from material_log import refresh
+    refresh(case)
     return dict(status='fresh_dft_layout_registered', paths=case_paths(case), accepted=False)
 
 
@@ -217,6 +219,8 @@ def init(case_dir, scf_source, band_source):
     write_json(case/'MATERIAL-LAYOUT.json', dict(format=FORMAT, mode='reused_dft', case_dir=str(case),
         created_utc=now(), sources={k:str(v) for k,v in sources.items()}))
     write_readme(case/'README.md', case_readme(case))
+    from material_log import refresh
+    refresh(case)
     return dict(status='initialized', paths=case_paths(case),
         missing_core_files={k:v['missing_core_files'] for k,v in records.items()}, accepted=False)
 
@@ -248,6 +252,8 @@ def new_trial(case_dir, trial_id):
         '- comparison/: same-k interpolation, fit figures, and review evidence.\n\n'
         'After execution, use `material_layout.py publish` to refresh display links; directory creation is not scientific success.\n')
     write_readme(case/'README.md', case_readme(case))
+    from material_log import refresh
+    refresh(case)
     return dict(status='trial_created_not_executed', paths=trial_paths(case, trial), accepted=False)
 
 
@@ -322,6 +328,8 @@ def publish(case_dir, trial_id):
     lines += [f'- `{name}`' for name in missing] if missing else ['Display inventory complete; scientific acceptance remains separate.']
     write_readme(trial/'README.md', '\n'.join(lines)+'\n')
     write_readme(case/'README.md', case_readme(case))
+    from material_log import refresh
+    refresh(case)
     return dict(status='incomplete' if missing else 'display_complete', paths=trial_paths(case, trial),
         missing=missing, links=[dict(path=str(d), target=r) for d,_,r in plans],
         recorded_wannier_state=state, accepted=False,
