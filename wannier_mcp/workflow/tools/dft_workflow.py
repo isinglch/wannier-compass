@@ -555,6 +555,8 @@ def run_stage(case, stage, profile):
                       density_sha256=density, prepared_input_hashes=manifest['input_hashes'])
         report['usable_outputs'] = report['usable_outputs'] and code == 0
         write_json(directory/'run.json', report)
+        from material_log import refresh
+        refresh(root)
         if not report['usable_outputs']:
             raise ValueError('Stage failed; inspect its run.json and logs. No downstream execution allowed.')
         return report
@@ -796,6 +798,8 @@ def run_interface(trial, profile):
         except (ValueError, OSError, KeyError) as error:
             record['problem'] = str(error)
         write_json(trial/'interface_run.json', record)
+        from material_log import refresh
+        refresh(trial)
         if not record['interface_files_consistent']:
             raise ValueError('Interface outputs failed checks; see interface_run.json.')
         if not record['ready_for_wannier']:

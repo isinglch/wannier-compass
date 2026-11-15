@@ -385,6 +385,8 @@ def render(case_dir):
             gallery_result=gallery.render(case.parent,experiment_id=read(initial_context)['experiment_id'])
         except (ValueError,KeyError,TypeError,OSError,json.JSONDecodeError) as error:
             gallery_warning=str(error)
+    from material_log import refresh
+    refresh(case)
     return dict(index=str(root/'index.html'),gallery=gallery_result,gallery_warning=gallery_warning)
 
 

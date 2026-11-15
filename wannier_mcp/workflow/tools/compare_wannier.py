@@ -352,6 +352,8 @@ def run(args):
             + ('native interpolation separately recorded by run_metrics' if metrics else 'no external accounting wrapper supplied')
             + '; not a new disentanglement attempt')
         save_new(out/'validation_report.json',report)
+        from material_log import refresh
+        refresh(out)
     display = 'technical_retry_private' if technical_retry else layout.publish(material,args.trial_id)['status']
     return dict(status=report['status'],directory=str(out),fit_pass=None,provisional=context['provisional'],display=display)
 

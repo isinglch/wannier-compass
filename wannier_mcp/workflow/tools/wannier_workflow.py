@@ -292,6 +292,8 @@ def prepare(interface_dir, out_dir, dis_num_iter=None, band_dir=None, cache=None
         manifest['window_reuse'] = reuse
     manifest['manifest_id'] = evidence.digest(manifest)
     dft.write_json(destination/MANIFEST, manifest)
+    from material_log import refresh
+    refresh(destination)
     return dict(status='prepared_not_executed', directory=str(destination),
                 manifest_id=manifest['manifest_id'], controls=manifest['controls'], changes=changes)
 
@@ -751,6 +753,8 @@ def run_output_recovery(directory, profile, ntasks=1):
                                       output_hashes=source_report.get('output_hashes',{})),
             scope='No recovery executed because the ordinary source workflow became fully authenticated before dependency start.')
         dft.write_json(directory/RECORD,report)
+        from material_log import refresh
+        refresh(directory)
         return report
     directory,manifest=validate_output_recovery_inputs(directory)
     site,parallelism=resources(profile,ntasks,allocation=True)
@@ -782,6 +786,8 @@ def run_output_recovery(directory, profile, ntasks=1):
         report['required_product_hashes']={name:report['output_hashes'][name] for name in REQUIRED_PRODUCTS
             if name in report['output_hashes']}
         dft.write_json(directory/RECORD,report)
+        from material_log import refresh
+        refresh(directory)
         return report
     finally:
         lock.unlink()
@@ -858,6 +864,8 @@ def run(directory, profile, ntasks=1):
         report['output_hashes'] = {name:dft.sha(directory/name) for name in OUTPUTS
             if (directory/name).is_file() and (directory/name).stat().st_size}
         dft.write_json(directory/RECORD,report)
+        from material_log import refresh
+        refresh(directory)
         return report
     finally:
         lock.unlink()

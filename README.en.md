@@ -26,7 +26,8 @@
 
 **Latest updates**
 
-<sub>2026-10-28 · v0.1.0 / small-model v0.2.0.dev11: add dedicated quick starts and an independent small-model workflow directory.<br>
+<sub>2026-11-15 · v0.1.0: Added a projection-centre coordinate check that warns and enables guiding centres near 0.5, plus a per-material WANNIER.log for calculation locations, trials and results.<br>
+2026-10-28 · v0.1.0 / small-model v0.2.0.dev11: add dedicated quick starts and an independent small-model workflow directory.<br>
 2026-10-22 · v0.1.0: add batch-material tests, band-fit figures and cost comparisons.<br>
 <a href="CHANGELOG.en.md">Full changelog →</a></sub>
 
