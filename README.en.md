@@ -235,3 +235,5 @@ Orbital and window optimization remain limited by the available projector basis;
 ## Contact
 
 [chenhao_liang2000@163.com](mailto:chenhao_liang2000@163.com) · [chenhao_liang@iphy.ac.cn](mailto:chenhao_liang@iphy.ac.cn)
+
+WannierCompass is licensed under the GNU General Public License v3.0 or later (GPL-3.0-or-later). See [LICENSE](LICENSE).
